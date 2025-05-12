@@ -8,19 +8,32 @@
   box-sizing: border-box;
 }
 
+.lithos-pro-black {
+  font-family: "lithos-pro", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
 /* ✅ Font e tipografia base */
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'lithos-pro', sans-serif;
+  font-weight: 900;
+  font-style: normal;
   font-size: 16px;
-  background-color: #292929;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--p-surface);
+}
+
+body::-webkit-scrollbar{
+  display: none;
 }
 
 /* ✅ Migliorie generiche */
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 a {

@@ -1,49 +1,87 @@
-.custom-navbar {
-  background-color: #F88D27 !important;
-  padding: 1rem 2rem;
-  margin: 2rem auto;
-  border-radius: 70px;
-  width: 95vw;
-  max-width: 95vw;
-  font-size: 1.5vw;
-  font-weight: 500;
+.card {
+  h2{
+    display: none;
+  }
+  background-color: var(--p-highlight-600) !important;
+  padding: 0.5rem 2rem;
+  margin: 1rem auto;
+  border-radius: 50px;
+  width: 90vw;
+  font-size: 1.4vw;
   justify-content: center;
   display: flex;
   position: sticky;
   top: 0;
-  z-index: 1000;
-
-  // 🎬 Transizione più fluida
+  z-index: 10000;
   transition:
-    padding 0.6s ease-in-out,
-    margin 0.6s ease-in-out,
-    border-radius 0.6s ease-in-out,
+    padding 1s ease-in-out,
+    margin 1s ease-in-out,
+    border-radius 1s ease-in-out,
     box-shadow 0.6s ease-in-out,
-    width 0.6s ease-in-out,
-    max-width 0.6s ease-in-out,
-    background-color 0.6s ease-in-out;
+    width 0.5s ease-in-out,
+    background-color 1s ease-in-out,
+    font-size 0.6s ease-in-out;
 
-  .p-menubar-root-list {
-    justify-content: center;
-    width: 100%;
+  img{
+    transition:
+      height 0.5s ease-in-out;
   }
 
-  .p-menuitem-link {
-    color: #000000 !important;
-    margin: 0 1rem;
-    transition: color 0.3s ease-in-out;
-  }
-
-  .p-menuitem-link:hover {
-    color: #ffffff !important;
-  }
 
   &.scrolled {
-    padding: 0.5rem 1rem;
-    margin: 0;
-    border-radius: 0;
+    background-color: #d60b52 !important;
+    display: flex;
+    justify-content: center;
+    img{
+      height: 50px;
+    }
     width: 100%;
-    max-width: 100%;
+    padding: 0.5rem 1rem;
+    margin: 0 auto;
+    border-radius: 0;
+    font-size: 0.9rem;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+}
+
+//stili mobile
+@media (max-width:960px){
+  .card{
+    h2{
+      display: inline;
+      font-size: 1.2rem;
+      transition: 0.5s ease-in-out;
+    }
+    width: 100%;
+    justify-content: left;
+    background-color: var(--p-primary-500) !important;
+    border-radius: 0;
+    margin: 0 auto 1rem;
+    padding: 0;
+    transition:
+      padding 1s ease-in-out,
+      margin 1s ease-in-out,
+      box-shadow 0.6s ease-in-out,
+      font-size 0.6s ease-in-out;
+
+
+    &.scrolled{
+      background-color: #d60b52 !important;
+      display: flex;
+      justify-content: left;
+      img{
+        height: 50px;
+      }
+      width: 100%;
+      padding: 0;
+      margin: 0 auto;
+      border-radius: 0;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+      h2{
+        font-size: 0.9rem;
+      }
+    }
+
   }
 }

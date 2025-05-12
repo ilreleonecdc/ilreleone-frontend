@@ -11,17 +11,20 @@ import { MenubarModule } from 'primeng/menubar';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent implements OnInit {
-  items: MenuItem[] = [];
+  items: MenuItem[] | undefined = [];
   isScrolled: boolean = false;
 
   ngOnInit(): void {
     this.items = [
-      { label: 'Home', routerLink: '/', icon: 'pi pi-home' },
-      { label: 'Lo Spettacolo', routerLink: '/spettacolo', icon: 'pi pi-star' },
-      { label: 'La Compagnia', routerLink: '/compagnia'},
-      { label: 'Eventi', routerLink: '/eventi' , icon: 'pi pi-calendar' },
-      { label: 'Galleria', routerLink: '/galleria', icon: 'pi pi-image' },
-      { label: 'Contatti', routerLink: '/contatti', icon: 'pi pi-envelope' },
+      { label: 'Home', routerLink: '/' },
+      { label: 'Lo Spettacolo', routerLink: '/spettacolo'},
+      {
+        label: 'La Compagnia', routerLink: '', items: [
+        { label: 'Chi Siamo', routerLink: '/compagnia' },
+      ]},
+      { label: 'Eventi', routerLink: '/eventi'},
+      { label: 'Galleria', routerLink: '/galleria' },
+      { label: 'Contatti', routerLink: '/contatti' },
     ];
   }
 

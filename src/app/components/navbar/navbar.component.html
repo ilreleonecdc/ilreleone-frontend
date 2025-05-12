@@ -1,16 +1,12 @@
-<p-menubar
-  [model]="items"
-  class="custom-navbar"
-  [ngClass]="{ scrolled: isScrolled }"
->
-  <ng-template pTemplate="start">
-    <img
-      src="../../../assets/logoOratorio.png"
-      alt="Il Re Leone CDC"
-      height="170"
-    />
-    @for (item of items; track $index) {
-    <p-menuitem [routerLink]="item.routerLink" icon="item.icon"> </p-menuitem>
-    }
-  </ng-template>
-</p-menubar>
+<div class="card" [ngClass]="{ scrolled: isScrolled }">
+  <p-menubar [model]="items">
+    <ng-template pTemplate="start">
+      <img
+        src="../../../assets/oratorioSVG.svg"
+        alt="Il Re Leone CDC"
+        height="80"
+      />
+      <h2>Oratorio PerDiQua</h2>
+    </ng-template>
+  </p-menubar>
+</div>

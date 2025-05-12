@@ -40,25 +40,37 @@ export const MyBrandPreset = definePreset(Aura, {
       900: '#5f0a0b'
     },
     highlight: {
-      50: '#fef4ea',
-      100: '#fde3cb',
-      200: '#fbc39b',
-      300: '#f9a469',
-      400: '#f88d27',
-      500: '#db7e22',
-      600: '#bd6f1d',
-      700: '#9f5f19',
-      800: '#814f14',
-      900: '#633f0f'
+      50:  '#fff5e9',
+      100: '#ffe3c0',
+      200: '#ffcb8f',
+      300: '#ffb25c',
+      400: '#ffa03e',
+      500: '#f88d27',
+      600: '#d6761f',
+      700: '#b55f18',
+      800: '#944911',
+      900: '#73330a',
+    },
+    highlightVariant: {
+      50:  '#fdeaf0',
+      100: '#fbcfdc',
+      200: '#f69db8',
+      300: '#f06895',
+      400: '#e73875',
+      500: '#d60b52',
+      600: '#b10945',
+      700: '#8b0738',
+      800: '#66052B',
+      900: '#41031e'
     },
     colorScheme: {
       light: {
-        surface: '#f7f8fa',
-        surfaceBorder: '#d9dce1',
-        textColor: '#1A1A1A',
+        surface: '#FFFFFF',
+        surfaceBorder: '#e4e4e4',
+        textColor: '#ffffff',
         primary: {
           color: '#FACE06',
-          inverseColor: '#1A1A1A',
+          inverseColor: '#47191f',
           hoverColor: '#f0c800',
           activeColor: '#e6b800'
         },
@@ -76,9 +88,15 @@ export const MyBrandPreset = definePreset(Aura, {
         },
         highlight: {
           color: '#F88D27',
-          inverseColor: '#ffffff',
+          inverseColor: '#47191f',
           hoverColor: '#db7e22',
           activeColor: '#bd6f1d'
+        },
+        highlightVariant: {
+          color: '#D60B52',
+          inverseColor: '#ffffff',
+          hoverColor: '#b10945',
+          activeColor: '#900f14'
         }
       },
       dark: {
@@ -108,9 +126,16 @@ export const MyBrandPreset = definePreset(Aura, {
           inverseColor: '#ffffff',
           hoverColor: '#db7e22',
           activeColor: '#bd6f1d'
+        },
+        highlightVariant: {
+          color: '#D60B52',
+          inverseColor: '#ffffff',
+          hoverColor: '#b10945',
+          activeColor: '#900f14'
         }
       }
     }
   }
 });
+
 export default MyBrandPreset;

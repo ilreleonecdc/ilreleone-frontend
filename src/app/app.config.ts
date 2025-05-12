@@ -18,7 +18,7 @@ export const appConfig: ApplicationConfig = {
         preset: MyBrandPreset,
         options: {
           cssLayer: false,
-          darkModeSelector: 'system',
+          darkModeSelector: false || 'none',
           prefix: 'p',
         }
       }
