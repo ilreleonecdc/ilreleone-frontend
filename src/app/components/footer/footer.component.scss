@@ -1,0 +1,22 @@
+#footer {
+  background-color: var(--oratorio-blue-50);
+  width: 100%;
+  height: fit-content;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.logos-container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: fit-content;
+  width: clamp(11.25rem, 8.8393rem + 12.0536vw, 28.125rem);
+  justify-self: center;
+  gap: 30px;
+}
+
+.card {
+  width: 100%;
+}
