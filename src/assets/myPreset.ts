@@ -51,7 +51,7 @@ export const MyBrandPreset = definePreset(Aura, {
       800: '#944911',
       900: '#73330a',
     },
-    highlightVariant: {
+    oratorioPrimary: {
       50:  '#fdeaf0',
       100: '#fbcfdc',
       200: '#f69db8',
@@ -62,6 +62,18 @@ export const MyBrandPreset = definePreset(Aura, {
       700: '#8b0738',
       800: '#66052B',
       900: '#41031e'
+    },
+    oratorioSecondary:{
+      50:  '#eaf7fc',
+      100: '#d0effb',
+      200: '#a6def7',
+      300: '#7dcef2',
+      400: '#55bdea',
+      500: '#009FE3',
+      600: '#008fcc',
+      700: '#007bb2',
+      800: '#006699',
+      900: '#004d73'
     },
     colorScheme: {
       light: {
