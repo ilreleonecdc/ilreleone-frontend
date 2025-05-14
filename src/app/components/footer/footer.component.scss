@@ -1,3 +1,5 @@
+$text-color: #373b3f;
+
 .rubik-black-italic {
   font-family: "Rubik", sans-serif;
   font-optical-sizing: auto;
@@ -37,43 +39,83 @@
   flex-direction: row;
   align-items: baseline;
   justify-content: center;
-  gap: 20px;
-  padding: 2vw 2vw;
+  gap: 30px;
+  padding: 1vw 2vw;
+  .card-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    .card-info {
+      p {
+        font-size: smaller;
+        color: $text-color;
+      }
+      #oratorio {
+        color: var(--oratorio-blue-700);
+      }
+      #cdc {
+        color: var(--oratorio-red-400);
+      }
+      #releone {
+        color: var(--p-primary-600);
+      }
+      #musical {
+        color: var(--p-accent-500);
+      }
+    }
+    #card-oratorio {
+      width: fit-content;
+      margin-left: auto;
+    }
+    #card-leone {
+      width: 100%;
+      margin-right: auto;
+    }
+  }
 }
 
-.card-info {
-  width: 30%;
-  #testo {
-    margin-left: 23px;
+// Footer-End
+.footer-end {
+  margin-top: 3vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: $text-color;
+  border: 2px solid red;
+
+  .copyright {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    border: 2px solid green;
+    p {
+    }
   }
-  .para-icon {
+  .texts {
+    padding: inherit;
     display: flex;
     flex-direction: row;
-    gap: 4px;
-    .parags {
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid green;
+  }
+}
+.social-media {
+  border: 2px solid black;
+  padding: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  a {
+    text-decoration: none;
+    &:hover i {
+      transform: scale(1.1);
+      transition: all 0.3s;
     }
-    .icons {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 30px;
-    }
-  }
-  p {
-    font-size: smaller;
-    color: #6c757d;
-  }
-  #oratorio {
-    color: var(--oratorio-blue-700);
-  }
-  #cdc {
-    color: var(--oratorio-red-400);
-  }
-  #releone {
-    color: var(--p-primary-500);
-    -webkit-text-stroke: 0.8px var(--p-primary-800);
-  }
-  #musical {
-    color: var(--p-accent-500);
   }
 }
