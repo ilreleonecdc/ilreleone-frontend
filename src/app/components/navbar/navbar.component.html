@@ -1,10 +1,13 @@
 <div class="card" [ngClass]="{ scrolled: isScrolled }" id="navbar">
+  <div class="spacer">
+    <img
+      src="../../../assets/oratorioSVG.svg"
+      alt="Oratorio PerDiQua"
+      id="logoOratorio"
+    />
+    <h2>Oratorio PerDiQua</h2>
+  </div>
   <p-menubar [model]="items" class="menubar">
-    <ng-template pTemplate="start">
-      <div class="spacer">
-        <img src="../../../assets/oratorioSVG.svg" alt="Il Re Leone CDC" />
-        <h2>Oratorio PerDiQua</h2>
-      </div>
-    </ng-template>
+    <ng-template pTemplate="start"> </ng-template>
   </p-menubar>
 </div>

@@ -1,9 +1,19 @@
+.rubik-black-italic {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: italic;
+}
+
 #footer {
   background-color: var(--oratorio-blue-50);
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+
   width: 100%;
   height: fit-content;
   padding: 10px;
   margin-top: 10px;
+  border-top: 2px solid var(--oratorio-blue-200);
 }
 
 .logos-container {
@@ -19,4 +29,51 @@
 
 .card {
   width: 100%;
+}
+
+.cards {
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: center;
+  gap: 20px;
+  padding: 2vw 2vw;
+}
+
+.card-info {
+  width: 30%;
+  #testo {
+    margin-left: 23px;
+  }
+  .para-icon {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    .parags {
+    }
+    .icons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+  }
+  p {
+    font-size: smaller;
+    color: #6c757d;
+  }
+  #oratorio {
+    color: var(--oratorio-blue-700);
+  }
+  #cdc {
+    color: var(--oratorio-red-400);
+  }
+  #releone {
+    color: var(--p-primary-500);
+    -webkit-text-stroke: 0.8px var(--p-primary-800);
+  }
+  #musical {
+    color: var(--p-accent-500);
+  }
 }

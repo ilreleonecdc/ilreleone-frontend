@@ -30,6 +30,6 @@ export class NavbarComponent implements OnInit {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    this.isScrolled = window.scrollY > 0;
+    this.isScrolled = window.scrollY > 30;
   }
 }

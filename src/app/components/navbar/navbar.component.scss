@@ -1,46 +1,55 @@
 #navbar {
-  margin: 1rem auto;
-  position: relative;
   padding: 0rem;
+  margin: 4vh auto 3vh;
   box-sizing: border-box;
-  border: solid var(--p-primary-500) 1px;
-  box-shadow: 0 1px 4px 0px var(--p-primary-500);
-  background-color: var(--p-highlight-500);
-  position: sticky;
-  display: flex;
-  justify-content: center;
   top: 0;
   z-index: 1000;
+  position: sticky;
+  border: solid var(--p-primary-500) 1px;
+  border: dashed 2px red;
+  box-shadow: 0 1px 4px 0px var(--p-primary-500);
+  background-color: var(--p-highlight-500);
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  align-items: center;
   border-radius: 60px;
-  width: clamp(90vw, 10vw, 80vw);
+  width: clamp(40rem, 15.96rem + 40.025vw, 80rem);
   font-size: clamp(0.9rem, 0.1187rem + 1.3008vw, 2.2rem);
-  transition: all 0.6s ease-in-out;
-  img {
-    height: clamp(70px, 7vw, 200px);
-    width: auto;
-    transition: all 0.3s ease-in-out;
-  }
+  transition: all 0.4s ease-in-out;
+
   .menubar {
-    width: inherit;
-    margin: 0.5vh 1vh !important;
     border-radius: inherit;
-    width: 100% !important;
-    box-sizing: border-box;
+    margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
   }
+  .spacer {
+    align-items: center;
+    h2 {
+      display: none;
+    }
+    #logoOratorio {
+      height: 0px;
+      transition: all 0.3s ease-in-out;
+    }
+  }
 
   &.scrolled {
+    font-size: small;
     width: 100%;
+    height: 100%;
     border-radius: 0;
-    margin: 0 auto;
-    background-color: var(--p-primary-500);
+    background-color: var(--oratorio-red-500);
     box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.1);
-    img {
-      height: clamp(50px, 8vh, 100px);
-      width: auto;
-      transition: all 0.3s ease-in-out;
+    .spacer {
+      margin: 4px 0 0 0;
+      #logoOratorio {
+        display: inline-flex;
+        height: 3.5vw;
+        width: auto;
+      }
     }
   }
 }
@@ -49,6 +58,8 @@
   ul[class="p-menubar-submenu"] {
     background-color: var(--p-primary-400);
     border: solid 1px var(--p-primary-600);
+    font-size: 0.9rem;
+    width: max-content;
   }
 }
 
@@ -64,14 +75,14 @@
   border-bottom: none;
 }
 
-.spacer {
-  h2 {
-    display: none;
-  }
-}
-
 // dispositivi mobile
 @media (max-width: 960px) {
+  .navbar-container {
+    img {
+      display: none;
+    }
+  }
+
   #navbar {
     box-sizing: border-box;
     margin: 1rem auto;
@@ -79,11 +90,6 @@
     align-items: center;
     width: clamp(13.75rem, 3.4375rem + 51.5625vw, 34.375rem);
     transition: all 0.5s ease-in-out;
-    img {
-      height: clamp(3.125rem, 0.9375rem + 10vw, 7.3rem);
-      width: auto;
-      transition: all 0.3s ease-in-out;
-    }
 
     .menubar {
       box-sizing: border-box;
@@ -96,6 +102,12 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      img {
+        display: inline-flex;
+        height: clamp(3.125rem, 0.9375rem + 10vw, 7.3rem);
+        width: auto;
+        transition: all 0.3s ease-in-out;
+      }
       h2 {
         display: inline-flex;
         font-size: clamp(1rem, 0.65rem + 1.75vw, 1.7rem);
