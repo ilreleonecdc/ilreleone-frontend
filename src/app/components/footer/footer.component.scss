@@ -24,7 +24,7 @@ $text-color: #373b3f;
   justify-content: space-evenly;
   align-items: center;
   height: fit-content;
-  width: clamp(7.5rem, 5.8929rem + 8.0357vw, 18.75rem);
+  width: clamp(15rem, 11.995rem + 5.0031vw, 20rem);
   justify-self: center;
   gap: 30px;
 }
@@ -65,7 +65,8 @@ $text-color: #373b3f;
       }
     }
     #card-oratorio {
-      width: fit-content;
+      width: max-content;
+      max-width: 100%;
       margin-left: auto;
     }
     #card-leone {
@@ -82,40 +83,81 @@ $text-color: #373b3f;
   flex-direction: row;
   justify-content: space-between;
   color: $text-color;
-  border: 2px solid red;
+  position: relative;
 
   .copyright {
     display: flex;
     flex-direction: column;
     justify-content: end;
     align-items: center;
-    border: 2px solid green;
+    max-width: 33%;
     p {
+      font-size: smaller;
     }
   }
-  .texts {
-    padding: inherit;
+  .social-media {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    border: 2px solid green;
+    @media (min-width: 961px) {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    a {
+      &:hover i {
+        transform: scale(1.1);
+        transition: all 0.3s;
+      }
+    }
+  }
+  .texts {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-right: 1vw;
   }
 }
-.social-media {
-  border: 2px solid black;
-  padding: inherit;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  a {
-    text-decoration: none;
-    &:hover i {
-      transform: scale(1.1);
-      transition: all 0.3s;
+
+// Tablet - Mobile
+
+@media (max-width: 960px) {
+  .logos-container {
+    width: clamp(12.5rem, 10.514rem + 7.4766vw, 15rem);
+  }
+
+  .cards {
+    .card-meta {
+      width: 50%;
+      #card-oratorio {
+        text-align: right;
+        #oratorio {
+          line-height: 1.2;
+        }
+      }
+      #card-leone {
+        @media (max-width: 440px) {
+          line-height: 1.2;
+        }
+      }
+    }
+  }
+
+  .footer-end {
+    margin-top: 45px;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    .copyright {
+      max-width: 90%;
+      margin-top: 25px;
+      margin-right: auto;
     }
   }
 }

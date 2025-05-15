@@ -1,0 +1,30 @@
+.viewport-debug {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: rgba(248, 141, 39, 0.9); // arancione brand
+  color: #fff;
+  padding: 0.3rem 1rem;
+  font-size: 0.85rem;
+  z-index: 9999;
+  font-family: monospace;
+  border-top-right-radius: 8px;
+  box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cards-container {
+  border: solid 2px red;
+  width: 90%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  margin: 2vw auto;
+  padding: 2vw;
+  gap: 4vw;
+  .card-content {
+    border: 2px solid blue;
+    width: 25rem;
+    height: auto;
+    overflow: hidden;
+  }
+}

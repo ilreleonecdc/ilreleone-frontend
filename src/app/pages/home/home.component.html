@@ -1,1 +1,16 @@
-<div class="card border-solid border-primary-500 h-screen"></div>
+<div class="viewport-debug" *ngIf="showDebug">Width: {{ viewportWidth }}px</div>
+
+<div class="cards-container">
+  <p-card class="card-content">
+    <ng-template #header>
+      <img src="../../../assets/oratorioSVG.svg" alt="Oratorio PerDiQua" />
+    </ng-template>
+    <ng-template #title>Oratorio PerDiQua</ng-template>
+    <ng-template #subtitle>Parrocchia di Cerbara</ng-template>
+  </p-card>
+  <p-card class="card-content">
+    <ng-template #header>
+      <img src="../../../assets/logoLeoneSVG.svg" alt="Il Re Leone CDC" />
+    </ng-template>
+  </p-card>
+</div>
