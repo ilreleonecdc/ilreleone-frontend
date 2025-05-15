@@ -1,6 +1,6 @@
 #navbar {
   padding: 0rem;
-  margin: 4vh auto 3vh;
+  margin: 4vh auto 10vh;
   box-sizing: border-box;
   top: 0;
   z-index: 1000;
@@ -45,6 +45,7 @@
     border-radius: 0;
     background-color: var(--oratorio-red-500);
     box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--oratorio-red-600);
     .spacer {
       margin: 4px 0 0 0;
       #logoOratorio {

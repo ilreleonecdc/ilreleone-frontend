@@ -19,7 +19,7 @@ $text-color: #373b3f;
 }
 
 .logos-container {
-  margin-top: 10px;
+  margin: 10px auto;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -125,10 +125,14 @@ $text-color: #373b3f;
 }
 
 // Tablet - Mobile
-
 @media (max-width: 960px) {
   .logos-container {
     width: clamp(12.5rem, 10.514rem + 7.4766vw, 15rem);
+  }
+
+  .card {
+    flex: 1 1 100%;
+    min-width: 0;
   }
 
   .cards {
