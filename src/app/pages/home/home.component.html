@@ -1,10 +1,11 @@
 <div class="viewport-debug" *ngIf="showDebug">Width: {{ viewportWidth }}px</div>
 
 <div class="cards-container">
-  <p-card class="card-content">
+  <p-card class="card-oratorio">
     <ng-template pTemplate="header">
       <div class="img-container">
         <img src="../../../assets/oratorioSVG.svg" alt="Oratorio PerDiQua" id="oratorio-img"/>
+        <div class="overlay-oratorio"></div>
       </div>
     </ng-template>
     <ng-template pTemplate="title">Oratorio PerDiQua</ng-template>
@@ -15,10 +16,11 @@
         <p-button label="Scopri di più" icon="pi pi-info-circle" class="p-button-outlined" severity="info" [routerLink]="'/oratorioperdiqua'"></p-button>
       </ng-template>
   </p-card>
-  <p-card class="card-content">
+  <p-card class="card-leone">
     <ng-template pTemplate="header">
       <div class="img-container"v>
         <img src="../../../assets/logoLeoneSVG.svg" alt="Il Re Leone CDC" id="logo-leone-img"/>
+        <div class="overlay-leone"></div>
       </div>
     </ng-template>
     <ng-template pTemplate="title">Il Re Leone CDC</ng-template>
@@ -29,7 +31,7 @@
         <p-button label="Scopri di più" icon="pi pi-info-circle" class="p-button-outlined" severity="info" [routerLink]="'/ilreleone'"></p-button>
       </ng-template>
   </p-card>
-  <p-card class="card-content">
+  <p-card class="card-lib">
     <ng-template pTemplate="header">
       <div class="img-container">
         <img src="../../../assets/libverde.jpg" alt="Libreria Verde" id="libreria-verde-img"/>

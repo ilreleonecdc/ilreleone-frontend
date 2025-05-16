@@ -31,6 +31,18 @@
   --oratorio-blue-700: #007bb2;
   --oratorio-blue-800: #006699;
   --oratorio-blue-900: #004d73;
+
+  // Palette verde
+  --verde-50:  #eaf4f1;
+  --verde-100: #d3e8e0;
+  --verde-200: #aad1c1;
+  --verde-300: #80b9a2;
+  --verde-400: #569f89;
+  --verde-500: #40806B;
+  --verde-600: #396f5e;
+  --verde-700: #325f51;
+  --verde-800: #294d42;
+  --verde-900: #1e3931;
 }
 
 /* ✅ Font e tipografia base */
@@ -40,7 +52,7 @@ body {
   font-style: normal;
   font-optical-sizing: auto;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--p-surface);
