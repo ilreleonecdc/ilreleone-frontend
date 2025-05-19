@@ -31,7 +31,6 @@
   min-height: fit-content;
   max-height: max-content;
   margin: 0 auto;
-  box-shadow: 8.0px 16.0px 16.0px hsl(0deg 0% 0% / 0.25);
   p{
     flex: 1 1 auto;
     overflow-y: auto;
@@ -76,7 +75,7 @@
     .overlay-leone{
       position: absolute;
       inset: 0;
-      background-color: rgba(from var(--p-primary-500) r g b / 0.2);
+      background-color: rgba(from var(--p-primary-300) r g b / 0.2);
       pointer-events: none;
     }
   }
@@ -85,25 +84,28 @@
 :host{
   ::ng-deep{
     .card-oratorio{
+      .p-card{
+        box-shadow: 0 4px 12px rgba(from var(--oratorio-red-700) r g b / 0.2);
+      }
       .p-card-header{
         border: 1px solid var(--oratorio-blue-800);
       }
       .p-card-title{
-        color: var(--oratorio-red-700);
+        color: var(--oratorio-red-500);
       }
       .p-card-subtitle{
-        color: var(--oratorio-blue-900)
+        color: var(--oratorio-blue-800)
       }
       .p-card-body{
         position: relative;
         border-radius: 0 0 12px 12px;
-        color: var(--oratorio-red-800);
+        color: var(--oratorio-red-900);
 
         &::before{
           content: '';
           position: absolute;
           inset: 0;
-          background-color: rgb(from var(--oratorio-red-500) r g b / 0.2);
+          background-color: rgb(from var(--oratorio-red-300) r g b / 0.2);
           pointer-events: none;
           border-radius: inherit;
           z-index: 0;
@@ -118,6 +120,9 @@
       }
     }
     .card-leone{
+      .p-card{
+        box-shadow: 0 4px 12px rgba(from var(--p-primary-500) r g b / 0.2);
+      }
       .p-card-header{
         border: 1px solid var(--p-primary-600);
       }
@@ -146,6 +151,9 @@
       }
     }
     .card-lib{
+      .p-card{
+        box-shadow: 0 4px 12px rgba(from var(--verde-500) r g b / 0.3);
+      }
       .p-card-header{
         border: 1px solid var(--verde-800);
       }
