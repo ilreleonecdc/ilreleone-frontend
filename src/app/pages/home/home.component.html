@@ -1,44 +1,82 @@
 <div class="viewport-debug" *ngIf="showDebug">Width: {{ viewportWidth }}px</div>
 
+<app-hero></app-hero>
+
 <div class="cards-container">
   <p-card class="card-oratorio">
     <ng-template pTemplate="header">
       <div class="img-container">
-        <img src="../../../assets/oratorioSVG.svg" alt="Oratorio PerDiQua" id="oratorio-img"/>
+        <img
+          src="../../../assets/oratorioSVG.svg"
+          alt="Oratorio PerDiQua"
+          id="oratorio-img"
+        />
         <div class="overlay-oratorio"></div>
       </div>
     </ng-template>
     <ng-template pTemplate="title">Oratorio PerDiQua</ng-template>
     <ng-template pTemplate="subtitle">Parrocchia di Cerbara</ng-template>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
-      quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</p>
-      <ng-template pTemplate="footer">
-        <p-button label="Scopri di più" icon="pi pi-info-circle" class="p-button-outlined" severity="info" [routerLink]="'/oratorioperdiqua'"></p-button>
-      </ng-template>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed
+      consequuntur error repudiandae numquam deserunt quisquam repellat libero
+      asperiores earum nam nobis, culpa ratione quam perferendis esse,
+      cupiditate neque quas!
+    </p>
+    <ng-template pTemplate="footer">
+      <p-button
+        label="Scopri di più"
+        icon="pi pi-info-circle"
+        class="p-button-outlined"
+        severity="info"
+        [routerLink]="'/oratorioperdiqua'"
+      ></p-button>
+    </ng-template>
   </p-card>
   <p-card class="card-leone">
     <ng-template pTemplate="header">
-      <div class="img-container"v>
-        <img src="../../../assets/logoLeoneSVG.svg" alt="Il Re Leone CDC" id="logo-leone-img"/>
+      <div class="img-container" v>
+        <img
+          src="../../../assets/logoLeoneSVG.svg"
+          alt="Il Re Leone CDC"
+          id="logo-leone-img"
+        />
         <div class="overlay-leone"></div>
       </div>
     </ng-template>
     <ng-template pTemplate="title">Il Re Leone CDC</ng-template>
     <ng-template pTemplate="subtitle">Il Musical</ng-template>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
-      quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</p>
-      <ng-template pTemplate="footer">
-        <p-button label="Scopri di più" icon="pi pi-info-circle" class="p-button-outlined" severity="info" [routerLink]="'/ilreleone'"></p-button>
-      </ng-template>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed
+      consequuntur error repudiandae numquam deserunt quisquam repellat libero
+      asperiores earum nam nobis, culpa ratione quam perferendis esse,
+      cupiditate neque quas!
+    </p>
+    <ng-template pTemplate="footer">
+      <p-button
+        label="Scopri di più"
+        icon="pi pi-info-circle"
+        class="p-button-outlined"
+        severity="info"
+        [routerLink]="'/ilreleone'"
+      ></p-button>
+    </ng-template>
   </p-card>
   <p-card class="card-lib">
     <ng-template pTemplate="header">
       <div class="img-container">
-        <img src="../../../assets/libverde.jpg" alt="Libreria Verde" id="libreria-verde-img"/>
+        <img
+          src="../../../assets/libverde.jpg"
+          alt="Libreria Verde"
+          id="libreria-verde-img"
+        />
       </div>
     </ng-template>
     <ng-template pTemplate="title">Libreria Verde</ng-template>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
-      quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed
+      consequuntur error repudiandae numquam deserunt quisquam repellat libero
+      asperiores earum nam nobis, culpa ratione quam perferendis esse,
+      cupiditate neque quas!
+    </p>
   </p-card>
 </div>

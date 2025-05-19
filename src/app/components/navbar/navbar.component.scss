@@ -3,8 +3,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: 2px;
-  background-color: var(--p-primary-500);
+  height: 3px;
+  background-color: var(--p-highlight-500);
   z-index: 9999;
   transition: width 0.2s ease-out;
 }
@@ -77,8 +77,12 @@
   }
 }
 
-// lista label
-:host ::ng-deep .p-menubar-root-list {
+// root list label primaria
+:host ::ng-deep .p-menubar-mobile-active .p-menubar-root-list {
+  right: 0;
+  left: auto;
+}
+:host ::ng-deep .p-menubar-mobile .p-menubar-root-list {
   border-radius: 12px;
   width: fit-content;
   background-color: rgba(255, 255, 255, 0.85);
@@ -88,6 +92,23 @@
     font-weight: 400;
     font-size: smaller;
   }
+  li {
+    border-bottom: 1px solid #ccc;
+  }
+  li:last-child {
+    border-bottom: none;
+  }
+  .p-icon {
+    color: #1f2937;
+  }
 }
 
-// TABLET
+// submenu root-list
+:host ::ng-deep .p-menubar-mobile .p-menubar-submenu {
+}
+
+:host ::ng-deep .p-menubar-submenu {
+  min-width: 8rem;
+}
+
+// TABLET`

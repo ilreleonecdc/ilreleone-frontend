@@ -12,7 +12,6 @@
   box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.3);
 }
 
-
 // region MOBILE
 .cards-container {
   display: flex;
@@ -25,30 +24,30 @@
   margin-top: 5rem;
 }
 
-:host ::ng-deep .p-card{
+:host ::ng-deep .p-card {
   color: #000000;
   width: 80%;
   height: 25rem;
   min-height: fit-content;
   max-height: max-content;
   margin: 0 auto;
-  p{
+  p {
     flex: 1 1 auto;
     overflow-y: auto;
     font-weight: 300;
-    line-height: 1.4
+    line-height: 1.4;
   }
-  &:hover{
+  &:hover {
     transform: translateY(-4px);
-    transition: all 0.2s ease-in-out;
+    transition: all 0.5s ease-in-out;
   }
 }
 
-:host ::ng-deep .p-card-header{
+:host ::ng-deep .p-card-header {
   justify-content: center;
   height: 10rem;
   border-radius: 12px 12px 0 0;
-  .img-container{
+  .img-container {
     border-radius: inherit;
     position: relative;
     display: inline-block;
@@ -58,22 +57,26 @@
     object-fit: cover;
     object-position: center;
     image-rendering: optimizeQuality;
-    #oratorio-img{transform: translateY(-2.6rem);}
-    #logo-leone-img{transform: translateY(-1rem) translateX(-0.3rem) scale(1.4);}
-    #libreria-verde-img{
+    #oratorio-img {
+      transform: translateY(-2.6rem);
+    }
+    #logo-leone-img {
+      transform: translateY(-1rem) translateX(-0.3rem) scale(1.4);
+    }
+    #libreria-verde-img {
       height: 100%;
       filter: blur(4px);
       -webkit-filter: blur(4px);
     }
 
-    .overlay-oratorio{
+    .overlay-oratorio {
       position: absolute;
       inset: 0;
       background-color: rgb(from var(--oratorio-blue-800) r g b / 0.2);
       pointer-events: none;
     }
 
-    .overlay-leone{
+    .overlay-leone {
       position: absolute;
       inset: 0;
       background-color: rgba(from var(--p-primary-300) r g b / 0.2);
@@ -82,28 +85,28 @@
   }
 }
 
-:host{
-  ::ng-deep{
-    .card-oratorio{
-      .p-card{
+:host {
+  ::ng-deep {
+    .card-oratorio {
+      .p-card {
         box-shadow: 0 4px 12px rgba(from var(--oratorio-red-700) r g b / 0.2);
       }
-      .p-card-header{
+      .p-card-header {
         border: 1px solid var(--oratorio-blue-800);
       }
-      .p-card-title{
+      .p-card-title {
         color: var(--oratorio-red-500);
       }
-      .p-card-subtitle{
-        color: var(--oratorio-blue-800)
+      .p-card-subtitle {
+        color: var(--oratorio-blue-800);
       }
-      .p-card-body{
+      .p-card-body {
         position: relative;
         border-radius: 0 0 12px 12px;
         color: var(--oratorio-red-900);
 
-        &::before{
-          content: '';
+        &::before {
+          content: "";
           position: absolute;
           inset: 0;
           background-color: rgb(from var(--oratorio-red-300) r g b / 0.2);
@@ -114,36 +117,36 @@
           border-top: none;
         }
 
-        > *{
+        > * {
           position: relative;
           z-index: 1;
         }
       }
     }
-    .card-leone{
-      .p-card{
+    .card-leone {
+      .p-card {
         box-shadow: 0 4px 12px rgba(from var(--p-primary-500) r g b / 0.2);
       }
-      .p-card-header{
+      .p-card-header {
         border: 1px solid var(--p-primary-600);
       }
-      .p-card-title{
+      .p-card-title {
         color: var(--p-accent-600);
       }
-      .p-card-subtitle{
+      .p-card-subtitle {
         color: var(--p-secondary-500);
       }
-      .p-card-body{
+      .p-card-body {
         position: relative;
         border-radius: 0 0 12px 12px;
-        color: #691A12;
+        color: #691a12;
 
-        &::before{
-          content: '';
+        &::before {
+          content: "";
           position: absolute;
           inset: 0;
           background-color: rgba(from var(--p-highlight-400) r g b / 0.2);
-          border: 1px solid var(--p-highlight-500) ;
+          border: 1px solid var(--p-highlight-500);
           border-top: none;
           pointer-events: none;
           border-radius: inherit;
@@ -151,23 +154,23 @@
         }
       }
     }
-    .card-lib{
-      .p-card{
+    .card-lib {
+      .p-card {
         box-shadow: 0 4px 12px rgba(from var(--verde-500) r g b / 0.3);
       }
-      .p-card-header{
+      .p-card-header {
         border: 1px solid var(--verde-800);
       }
-      .p-card-title{
+      .p-card-title {
         color: var(--verde-800);
       }
-      .p-card-body{
+      .p-card-body {
         position: relative;
         border-radius: 0 0 12px 12px;
         color: var(--verde-900);
 
-        &::before{
-          content: '';
+        &::before {
+          content: "";
           position: absolute;
           inset: 0;
           background-color: rgba(from var(--verde-500) r g b / 0.2);
@@ -178,7 +181,7 @@
           z-index: 0;
         }
 
-        > *{
+        > * {
           position: relative;
           z-index: 1;
         }
@@ -187,26 +190,23 @@
   }
 }
 
-:host ::ng-deep .p-card-title{
+:host ::ng-deep .p-card-title {
   font-size: 1.4rem;
   font-weight: 900;
   font-style: italic;
 }
 
-:host ::ng-deep .p-card-footer{
+:host ::ng-deep .p-card-footer {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 // endregion
 
-
-
 // region TABLET
 @media (min-width: 768px) {
 }
 // endregion
-
 
 // region DESKTOP
 @media (min-width: 1024px) {
