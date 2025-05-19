@@ -13,6 +13,8 @@ import { MenubarModule } from 'primeng/menubar';
 export class NavbarComponent implements OnInit {
   items: MenuItem[] | undefined = [];
   isScrolled: boolean = false;
+  scrollProgress = 0;
+  isMenuOpen: boolean = false;
 
   ngOnInit(): void {
     this.items = [
@@ -30,10 +32,13 @@ export class NavbarComponent implements OnInit {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    if (window.scrollY <= 0) {
-      this.isScrolled = false;
-    } else {
-      this.isScrolled = true;
-    }
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    this.scrollProgress = (scrollTop / docHeight) * 100;
+    this.isScrolled = scrollTop > 0;
+  }
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
   }
 }

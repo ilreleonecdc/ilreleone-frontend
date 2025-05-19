@@ -1,13 +1,30 @@
-<div class="card" [ngClass]="{ scrolled: isScrolled }" id="navbar">
+<div class="scroll-progress-bar" [style.width.%]="scrollProgress"></div>
+
+<div class="navbar-wrapper" [ngClass]="{ scrolled: isScrolled }" id="navbar">
   <div class="spacer">
     <img
       src="../../../assets/oratorioSVG.svg"
       alt="Oratorio PerDiQua"
       id="logoOratorio"
     />
-    <h2>Oratorio PerDiQua</h2>
+    <h3>
+      Oratorio <span id="span1">Per</span><span id="span2">Di</span
+      ><span id="span3">Qua</span>
+    </h3>
   </div>
   <p-menubar [model]="items" class="menubar">
-    <ng-template pTemplate="start"> </ng-template>
+    <ng-template pTemplate="start"></ng-template>
+    <ng-template pTemplate="menuicon">
+      <button
+        type="button"
+        class="p-menubar-button p-link"
+        (click)="toggleMenu()"
+      >
+        <i
+          [ngClass]="isMenuOpen ? 'pi pi-times' : 'pi pi-bars'"
+          style="font-size: 1.5rem"
+        ></i>
+      </button>
+    </ng-template>
   </p-menubar>
 </div>
