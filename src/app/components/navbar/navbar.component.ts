@@ -24,6 +24,7 @@ export class NavbarComponent implements OnInit {
         label: 'Compagnia', routerLink: '', items: [
         { label: 'Chi Siamo', routerLink: '/compagnia' },
       ]},
+      { label: 'Grest 2025', routerLink: '/grest' },
       { label: 'Eventi', routerLink: '/eventi'},
       { label: 'Galleria', routerLink: '/galleria' },
       { label: 'Contatti', routerLink: '/contatti' },

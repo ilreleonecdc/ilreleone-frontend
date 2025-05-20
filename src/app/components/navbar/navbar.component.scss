@@ -10,7 +10,6 @@
 }
 
 .navbar-wrapper {
-  border-bottom: 1px solid rgba(28, 28, 28, 1);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -69,7 +68,7 @@
 // hamburger button
 :host ::ng-deep .p-menubar-button {
   .pi {
-    color: #5c5c5c;
+    color: #000000;
     transition: all 0.3s ease;
   }
   .pi-times {
@@ -84,7 +83,7 @@
 }
 :host ::ng-deep .p-menubar-mobile .p-menubar-root-list {
   border-radius: 12px;
-  width: fit-content;
+  width: 90vw;
   background-color: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(6px);
   span {
