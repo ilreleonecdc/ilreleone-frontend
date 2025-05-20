@@ -41,5 +41,12 @@ export class NavbarComponent implements OnInit {
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
+
+    const menubar = document.querySelector('.p-menubar');
+    if (this.isMenuOpen) {
+      menubar?.classList.add('p-menubar-mobile-active');
+    } else {
+      menubar?.classList.remove('p-menubar-mobile-active');
+    }
   }
 }
