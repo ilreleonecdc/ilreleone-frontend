@@ -1,6 +1,6 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { CommonModule } from '@angular/common';
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { MenubarModule } from 'primeng/menubar';
@@ -25,6 +25,8 @@ export class NavbarComponent implements OnInit {
 
   isMenuOpen: boolean = false;
   isAnimatingOut: boolean = false;
+
+  @ViewChild('menubar', { static: false }) menubarRef!: ElementRef;
 
   constructor(private router: Router) {
     this.router.events.subscribe((event) => {
@@ -59,16 +61,33 @@ export class NavbarComponent implements OnInit {
     this.isScrolled = scrollTop > 0;
   }
 
+  closeMenu() {
+    this.isAnimatingOut = true;
+
+    setTimeout(() => {
+      this.isMenuOpen = false;
+      this.isAnimatingOut = false;
+    }, 300);
+  }
+
   toggleMenu() {
     if (this.isMenuOpen) {
-      this.isAnimatingOut = true;
-      setTimeout(() => {
-        this.isMenuOpen = false;
-        this.isAnimatingOut = false;
-      }, 300)
+      this.closeMenu();
     } else {
       this.isMenuOpen = true;
     }
-    console.log(this.isMenuOpen)
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) {
+    const target = event.target as HTMLElement;
+
+    if (!this.menubarRef) return; // 👈 blocca se ancora undefined
+
+    const clickedInside = this.menubarRef.nativeElement.contains(target);
+
+    if (this.isMenuOpen && !this.isAnimatingOut && !clickedInside) {
+      this.closeMenu();
+    }
   }
 }
