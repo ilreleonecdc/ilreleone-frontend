@@ -1,6 +1,7 @@
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { CommonModule } from '@angular/common';
 import { Component, HostListener, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { MenubarModule } from 'primeng/menubar';
 
@@ -8,24 +9,42 @@ import { MenubarModule } from 'primeng/menubar';
   selector: 'app-navbar',
   imports: [CommonModule, RouterModule, MenubarModule],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss'
+  styleUrl: './navbar.component.scss',
+  animations: [
+    trigger('menuAnimation', [
+      state('open', style({ transform: 'translateX(0)', opacity: 1 })),
+      state('closed', style({ transform: 'translateX(-100%)', opacity: 0 })),
+      transition('closed <=> open', animate('300ms ease-in-out'))
+    ])
+  ]
 })
 export class NavbarComponent implements OnInit {
   items: MenuItem[] | undefined = [];
   isScrolled: boolean = false;
   scrollProgress = 0;
+
   isMenuOpen: boolean = false;
+  isAnimatingOut: boolean = false;
+
+  constructor(private router: Router) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.isMenuOpen = false;
+      }
+    });
+  }
 
   ngOnInit(): void {
     this.items = [
       { label: 'Home', routerLink: '/' },
-      { label: 'Spettacoli', routerLink: '/spettacoli'},
+      { label: 'Spettacoli', routerLink: '/spettacoli' },
       {
         label: 'Compagnia', routerLink: '', items: [
-        { label: 'Chi Siamo', routerLink: '/compagnia' },
-      ]},
+          { label: 'Chi Siamo', routerLink: '/compagnia' },
+        ]
+      },
       { label: 'Grest 2025', routerLink: '/grest' },
-      { label: 'Eventi', routerLink: '/eventi'},
+      { label: 'Eventi', routerLink: '/eventi' },
       { label: 'Galleria', routerLink: '/galleria' },
       { label: 'Contatti', routerLink: '/contatti' },
     ];
@@ -36,17 +55,20 @@ export class NavbarComponent implements OnInit {
     const scrollTop = window.scrollY;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
     this.scrollProgress = (scrollTop / docHeight) * 100;
+
     this.isScrolled = scrollTop > 0;
   }
 
   toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
-
-    const menubar = document.querySelector('.p-menubar');
     if (this.isMenuOpen) {
-      menubar?.classList.add('p-menubar-mobile-active');
+      this.isAnimatingOut = true;
+      setTimeout(() => {
+        this.isMenuOpen = false;
+        this.isAnimatingOut = false;
+      }, 300)
     } else {
-      menubar?.classList.remove('p-menubar-mobile-active');
+      this.isMenuOpen = true;
     }
+    console.log(this.isMenuOpen)
   }
 }

@@ -76,33 +76,106 @@
   }
 }
 
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutLeft {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+// region animazioni
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeSlideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+}
+// endregion animation
+
 // root list label primaria
-:host ::ng-deep .p-menubar-mobile-active .p-menubar-root-list {
-  animation: dribbbleMenuIn 0.4s ease-in-out;
-  z-index: 1000;
-  position: fixed;
-  border-top: 1px solid #eee;
+:host ::ng-deep .p-menubar-mobile-active {
+  .p-menubar-root-list {
+    display: flex !important;
+    z-index: 1000;
+    position: fixed;
+    border-top: 1px solid #eeeeee;
+    animation: slideInLeft 0.3s ease forwards;
+  }
+}
+
+:host ::ng-deep .menu-anim-out .p-menubar-root-list {
+  display: flex !important;
+  animation: slideOutLeft 0.3s ease forwards;
 }
 
 :host ::ng-deep .p-menubar-mobile .p-menubar-root-list {
-  border-radius: 0 0 12px 12px;
   justify-self: center;
   background-color: rgba(255, 255, 255);
   gap: 0;
   span {
     color: #1f2937;
-    font-weight: 800;
+    font-weight: 700;
     font-size: 1rem;
   }
-  // li {
-  //   border-bottom: 1px solid #ccc;
-  // }
-  // li:last-child {
-  //   border-bottom: none;
-  // }
   .p-icon {
     color: #1f2937;
   }
+}
+
+:host ::ng-deep .p-menubar-mobile-active .p-menubar-root-list > li {
+  opacity: 0;
+  animation: fadeSlideIn 0.4s ease forwards;
+}
+:host ::ng-deep .p-menubar-mobile-active .p-menubar-root-list > li:nth-child(1) {
+  animation-delay: 0.2s;
+}
+:host ::ng-deep .p-menubar-mobile-active .p-menubar-root-list > li:nth-child(2) {
+  animation-delay: 0.3s;
+}
+:host ::ng-deep .p-menubar-mobile-active .p-menubar-root-list > li:nth-child(3) {
+  animation-delay: 0.4s;
+}
+:host ::ng-deep .p-menubar-mobile-active .p-menubar-root-list > li:nth-child(4) {
+  animation-delay: 0.5s;
+}
+:host ::ng-deep .p-menubar-mobile-active .p-menubar-root-list > li:nth-child(5) {
+  animation-delay: 0.6s;
+}
+:host ::ng-deep .p-menubar-mobile-active .p-menubar-root-list > li:nth-child(6) {
+  animation-delay: 0.7s;
+}
+:host ::ng-deep .p-menubar-mobile-active .p-menubar-root-list > li:nth-child(7) {
+  animation-delay: 0.8s;
 }
 
 // submenu root-list
@@ -113,4 +186,12 @@
   min-width: 8rem;
 }
 
-// TABLET`
+// region TABLET
+@media (min-width: 768px) {
+}
+// endregion
+
+// region DESKTOP
+@media (min-width: 1024px) {
+}
+// endregion

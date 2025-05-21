@@ -23,6 +23,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@primeng/themes": "^19.1.2",
+    "hamburger": "^0.1.1",
     "hamburgers": "^1.2.1",
     "ilreleone-frontend": "file:",
     "ngx-toastr": "^19.0.0",

@@ -15,8 +15,16 @@
       >
     </h3>
   </div>
-  <p-menubar [model]="items" class="menubar">
-    <ng-template pTemplate="start"></ng-template>
+  <p-menubar
+    [model]="items"
+    class="menubar"
+    [ngClass]="{
+      'p-menubar-mobile-active': isMenuOpen,
+      'p-menubar-mobile': !isMenuOpen,
+      'menu-anim-out': isAnimatingOut
+    }"
+  >
+    <ng-template pTemplate="start"> </ng-template>
     <ng-template pTemplate="menuicon">
       <button
         type="button"
@@ -24,7 +32,9 @@
         (click)="toggleMenu()"
       >
         <i
-          [ngClass]="isMenuOpen ? 'pi pi-times' : 'pi pi-bars'"
+          [ngClass]="
+            isMenuOpen && !isAnimatingOut ? 'pi pi-times' : 'pi pi-bars'
+          "
           style="font-size: 1.5rem"
         ></i>
       </button>
