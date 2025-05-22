@@ -159,9 +159,10 @@ $text-color: #373b3f;
     justify-content: center;
     gap: 15px;
     .copyright {
-      max-width: 90%;
+      border: 1px solid red;
+      max-width: 98%;
       margin-top: 25px;
-      margin-right: auto;
+      text-align: center;
     }
   }
 }
