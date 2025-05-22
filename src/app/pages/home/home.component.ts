@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from "primeng/card";
@@ -21,5 +21,20 @@ export class HomeComponent {
     window.addEventListener('resize', () => {
       this.viewportWidth = window.innerWidth;
     });
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    const immagini = document.querySelectorAll('.parallax-img');
+
+    immagini.forEach((img: Element) => {
+      const offset = (scrollTop * 0.05); // cambia 0.2 per un effetto più o meno intenso
+      (img as HTMLElement).style.transform = `translateY(-${offset}px)`;
+    });
+  }
+
+  ngAfterViewInit() {
+    this.onWindowScroll(); // inizializza subito se c'è scroll iniziale
   }
 }

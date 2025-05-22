@@ -23,6 +23,9 @@
   transition: all 0.4s ease;
 
   h3 {
+    @media (max-width: 335px) {
+      font-size: 1rem;
+    }
     font-size: 18px;
     transition: all 0.3s ease-in-out;
   }
@@ -38,6 +41,7 @@
     }
   }
 }
+
 .spacer {
   display: flex;
   flex-direction: row;
@@ -67,11 +71,10 @@
 
 // hamburger button
 :host ::ng-deep .p-menubar-button {
-  .pi {
-    color: #000000;
-    transition: all 0.3s ease;
+  .icon {
+    transition: all 0.2s ease;
   }
-  .pi-times {
+  .i-times {
     transform: rotate(90deg);
   }
 }
@@ -133,9 +136,10 @@
   }
 }
 
-:host ::ng-deep .menu-anim-out .p-menubar-root-list {
-  display: flex !important;
-  animation: slideOutLeft 0.3s ease forwards;
+:host ::ng-deep .menu-anim-out {
+  .p-menubar-root-list {
+    animation: slideOutLeft 0.3s ease forwards;
+  }
 }
 
 :host ::ng-deep .p-menubar-mobile .p-menubar-root-list {
@@ -146,6 +150,7 @@
     color: #1f2937;
     font-weight: 700;
     font-size: 1rem;
+    margin-left: 0.5rem;
   }
   .p-icon {
     color: #1f2937;

@@ -1,13 +1,14 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { MenuItem } from 'primeng/api';
+import { ButtonModule } from 'primeng/button';
 import { MenubarModule } from 'primeng/menubar';
 
 @Component({
   selector: 'app-navbar',
-  imports: [CommonModule, RouterModule, MenubarModule],
+  imports: [CommonModule, RouterModule, MenubarModule, ButtonModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
   animations: [
@@ -26,8 +27,6 @@ export class NavbarComponent implements OnInit {
   isMenuOpen: boolean = false;
   isAnimatingOut: boolean = false;
 
-  @ViewChild('menubar', { static: false }) menubarRef!: ElementRef;
-
   constructor(private router: Router) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
@@ -41,7 +40,7 @@ export class NavbarComponent implements OnInit {
       { label: 'Home', routerLink: '/' },
       { label: 'Spettacoli', routerLink: '/spettacoli' },
       {
-        label: 'Compagnia', routerLink: '', items: [
+        label: 'Compagnia', items: [
           { label: 'Chi Siamo', routerLink: '/compagnia' },
         ]
       },
@@ -50,15 +49,6 @@ export class NavbarComponent implements OnInit {
       { label: 'Galleria', routerLink: '/galleria' },
       { label: 'Contatti', routerLink: '/contatti' },
     ];
-  }
-
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    this.scrollProgress = (scrollTop / docHeight) * 100;
-
-    this.isScrolled = scrollTop > 0;
   }
 
   closeMenu() {
@@ -78,16 +68,12 @@ export class NavbarComponent implements OnInit {
     }
   }
 
-  @HostListener('document:click', ['$event'])
-  onDocumentClick(event: MouseEvent) {
-    const target = event.target as HTMLElement;
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    this.scrollProgress = (scrollTop / docHeight) * 100;
 
-    if (!this.menubarRef) return; // 👈 blocca se ancora undefined
-
-    const clickedInside = this.menubarRef.nativeElement.contains(target);
-
-    if (this.isMenuOpen && !this.isAnimatingOut && !clickedInside) {
-      this.closeMenu();
-    }
+    this.isScrolled = scrollTop > 0;
   }
 }
