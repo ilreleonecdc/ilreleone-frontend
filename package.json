@@ -23,6 +23,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@primeng/themes": "^19.1.2",
+    "@types/three": "^0.176.0",
     "hamburger": "^0.1.1",
     "hamburgers": "^1.2.1",
     "ilreleone-frontend": "file:",
@@ -32,6 +33,7 @@
     "primeng": "^19.1.2",
     "rxjs": "~7.8.0",
     "swiper": "^11.2.7",
+    "three": "^0.176.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
