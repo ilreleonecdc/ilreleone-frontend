@@ -23,11 +23,11 @@
   transition: all 0.4s ease;
 
   h3 {
+    font-size: 18px;
+    transition: all 0.3s ease-in-out;
     @media (max-width: 335px) {
       font-size: 1rem;
     }
-    font-size: 18px;
-    transition: all 0.3s ease-in-out;
   }
 
   &.scrolled {
@@ -67,11 +67,16 @@
 // p-menubar-mobile
 :host ::ng-deep .p-menubar.p-component.p-menubar-mobile {
   padding: 0;
+  margin: 0;
+  gap: 0;
 }
 
 // hamburger button
 :host ::ng-deep .p-menubar-button {
   .icon {
+    max-width: 3rem;
+    width: 2.2rem;
+    height: auto;
     transition: all 0.2s ease;
   }
   .i-times {
@@ -79,6 +84,7 @@
   }
 }
 
+// region animazioni
 @keyframes slideInLeft {
   0% {
     transform: translateX(-100%);
@@ -101,7 +107,6 @@
   }
 }
 
-// region animazioni
 @keyframes fadeSlideIn {
   from {
     opacity: 0;
@@ -195,6 +200,16 @@
 @media (min-width: 768px) {
 }
 // endregion
+
+@media (min-width: 961px) {
+  :host ::ng-deep .p-menubar-root-list {
+    justify-content: center;
+    a:hover {
+      color: #aaaaaa;
+      transition: all 0.3s ease;
+    }
+  }
+}
 
 // region DESKTOP
 @media (min-width: 1024px) {

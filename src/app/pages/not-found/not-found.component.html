@@ -1,0 +1,28 @@
+<section class="not-found-page">
+  <div class="content-wrapper">
+    <h1 class="error-code">404</h1>
+    <p class="error-message">Ops! ti sei perso nelle sale dell'Oratorio?</p>
+
+    <div class="game-box">
+      <p style="margin: 0.5rem">
+        Indovina un numero da <strong>1</strong> a <strong>5</strong>:
+      </p>
+      <p-inputnumber
+        inputId="intergeronly"
+        [(ngModel)]="guess"
+        [min]="1"
+        [max]="5"
+      />
+      <button pButton (click)="checkGuess()" [disabled]="guess === null">
+        Prova!
+      </button>
+      @if(message){
+      <p class="feedback">{{ message }}</p>
+      }
+      <button pButton class="reset" (click)="resetGame()">Ricomincia</button>
+    </div>
+    @if (guessed){
+    <a [routerLink]="'/'" class="btn-home">🏠 Torna a Casa</a>
+    }
+  </div>
+</section>

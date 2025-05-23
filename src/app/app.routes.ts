@@ -7,7 +7,7 @@ export const routes: Routes = [
       import('./pages/home/home.component').then((m) => m.HomeComponent),
   },
   {
-    path: 'spettacolo',
+    path: 'spettacoli',
     loadComponent: () =>
       import('./pages/spettacolo/spettacolo.component').then(
         (m) => m.SpettacoloComponent
@@ -40,7 +40,20 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'grest',
+    loadComponent: () =>
+      import('./pages/grest/grest.component').then(
+        (m) => m.GrestComponent
+      ),
+  },
+  {
+    path: '404',
+    loadComponent: () =>
+      import('./pages/not-found/not-found.component').then(
+        (m) => m.NotFoundComponent),
+  },
+  {
     path: '**',
-    redirectTo: '',
+    redirectTo: '404'
   },
 ];

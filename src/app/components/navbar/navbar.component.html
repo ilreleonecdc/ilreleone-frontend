@@ -1,11 +1,15 @@
 <div class="scroll-progress-bar" [style.width.%]="scrollProgress"></div>
 
 <div class="navbar-wrapper" [ngClass]="{ scrolled: isScrolled }" id="navbar">
-  <div class="spacer">
+  <div
+    class="spacer"
+    onclick="window.location.href='/home'"
+    style="cursor: pointer"
+  >
     <img
       src="../../../assets/oratorioSVG.svg"
       alt="Oratorio PerDiQua"
-      id="logoOratorio"
+      id="logo-oratorio"
     />
     <h3>
       <span style="font-weight: 500">Oratorio </span>
@@ -15,22 +19,12 @@
       >
     </h3>
   </div>
-  <!-- <p-menubar
-    #menubar
-    [model]="items"
-    class="menubar"
-    [ngClass]="{
-      'p-menubar-mobile-active': isMenuOpen,
-      'p-menubar-mobile': !isMenuOpen,
-      'menu-anim-out': isAnimatingOut
-    }"
-  > -->
   <p-menubar
     #menubar
     [model]="items"
     class="menubar"
     [class.menu-anim-out]="isAnimatingOut"
-    [class.p.menubar-mobile-active]="isMenuOpen"
+    [class.p-menubar-mobile-active]="isMenuOpen"
   >
     <ng-template pTemplate="start"> </ng-template>
     <ng-template pTemplate="menuicon">

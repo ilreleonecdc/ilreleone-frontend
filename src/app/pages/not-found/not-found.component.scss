@@ -1,0 +1,82 @@
+:not-found-page,
+.not-found-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+  background: #f9f9f9;
+}
+
+.content-wrapper {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 12px;
+  background: white;
+}
+
+.error-code {
+  font-size: 6rem;
+  margin: 0;
+  color: var(--oratorio-orange-500);
+}
+
+.error-message {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+.game-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 1px dashed #ddd;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+.game-box p-inputnumber {
+  padding: 0.3rem;
+  text-align: center;
+}
+
+.game-box button {
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.game-box button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.feedback {
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+.reset {
+  background: transparent;
+  color: #888;
+}
+
+.btn-home {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--oratorio-orange-500);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-home:hover {
+  background: #e07d20;
+}
