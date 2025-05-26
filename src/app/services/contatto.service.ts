@@ -11,6 +11,6 @@ export class ContattoService {
   constructor() { }
 
   public sendContatto(contatto: Contatto) {
-    return this.httpClient.post('https://localhost:44319/api/Contatto', contatto);
+    return this.httpClient.post('https://httpbin.org/post', contatto);
   }
 }

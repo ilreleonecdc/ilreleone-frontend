@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   height: 3px;
-  background-color: var(--p-highlight-500);
+  background-color: var(--leone-orange-500);
   z-index: 9999;
   transition: width 0.2s ease-out;
 }
@@ -54,13 +54,13 @@
     transition: all 0.2s ease-in-out;
   }
   #span1 {
-    color: var(--oratorio-red-500);
+    color: var(--p-secondary-500);
   }
   #span2 {
-    color: var(--oratorio-orange-500);
+    color: var(--p-highlight-500);
   }
   #span3 {
-    color: var(--oratorio-blue-500);
+    color: var(--p-primary-500);
   }
 }
 
@@ -205,7 +205,7 @@
   :host ::ng-deep .p-menubar-root-list {
     justify-content: center;
     a:hover {
-      color: var(--oratorio-blue-600);
+      color: var(--p-primary-600);
       transition: all 0.3s ease;
     }
   }

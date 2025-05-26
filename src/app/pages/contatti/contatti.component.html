@@ -1,33 +1,130 @@
-<div class="p-fluid p-formgrid grid">
-  <div class="field col-12 md:col-6">
-    <label for="nome">Nome</label>
-    <input pInputText type="text" id="nome" formControlName="nome" />
-  </div>
-  <div class="field col-12 md:col-6">
-    <label for="cognome">Cognome</label>
-    <input pInputText type="text" id="cognome" formControlName="cognome" />
-  </div>
-  <div class="field col-12 md:col-6">
-    <label for="email">Email</label>
-    <input pInputText type="text" id="email" formControlName="email" />
-  </div>
-  <div class="field col-12">
-    <label for="messagio"><Mark></Mark>essagio</label>
-    <textarea type="text" id="messagio" formControlName="messagio"></textarea>
-  </div>
-  <div class="field col-12">
-    <button
-      pButton
-      type="button"
-      label="Invia"
-      (click)="onSubmit()"
-      [disabled]="this.form?.invalid"
-    ></button>
-  </div>
+<div class="w-full mb-6">
+  <p style="font-weight: 300">Non riesci a trovare quello che cerchi?</p>
+</div>
 
-  @if (inviato && !errore){
-  <p class="text-green-500">Messaggio Inviato con successo!</p>
-  } @if (errore) {
-  <p class="text-red-500">Errore durante l'invio. Riprova!</p>
-  }
+<div class="contact-container">
+  <h2 style="font-weight: 600">Contattaci</h2>
+  <form
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+    class="formgrid grid p-fluid"
+  >
+    <div class="field col-12 md:col-5">
+      <p-floatlabel>
+        <input pInputText id="nome" type="text" formControlName="nome" />
+        <label for="nome">Nome</label>
+      </p-floatlabel>
+      <p-message
+        [life]="3000"
+        severity="error"
+        variant="simple"
+        size="small"
+        text="Il nome è obbligatorio"
+        *ngIf="form.controls['nome'].invalid && form.controls['nome'].touched"
+      ></p-message>
+    </div>
+    <div class="field col-12 md:col-5">
+      <p-floatlabel>
+        <input pInputText id="cognome" type="text" formControlName="cognome" />
+        <label for="cognome">Cognome</label>
+      </p-floatlabel>
+      <p-message
+        [life]="3000"
+        severity="error"
+        variant="simple"
+        size="small"
+        text="Il cognome è obbligatorio"
+        *ngIf="
+          form.controls['cognome'].invalid && form.controls['cognome'].touched
+        "
+      ></p-message>
+    </div>
+    <div class="field col-12">
+      <p-floatlabel>
+        <input pInputText id="email" type="text" formControlName="email" />
+        <label for="email">Email</label>
+      </p-floatlabel>
+      <p-message
+        [life]="3000"
+        severity="error"
+        variant="simple"
+        size="small"
+        text="L'email è obbligatoria"
+        *ngIf="form.controls['email'].invalid && form.controls['email'].touched"
+      ></p-message>
+    </div>
+    <div class="field col-12">
+      <p-floatlabel
+        ><p-select
+          [options]="opzioniOggetto"
+          formControlName="oggetto"
+          optionLabel="label"
+          optionValue="value"
+          variant="filled"
+        ></p-select>
+        <label for="oggetto">Oggetto</label></p-floatlabel
+      >
+      <p-message
+        [life]="3000"
+        severity="error"
+        variant="simple"
+        size="small"
+        text="Inserisci un oggetto"
+        *ngIf="
+          form.controls['oggetto'].invalid && form.controls['oggetto'].touched
+        "
+      ></p-message>
+    </div>
+    <div class="field col-12">
+      <p-floatlabel>
+        <textarea
+          pInputTextarea
+          id="messaggio"
+          rows="8"
+          formControlName="messaggio"
+        ></textarea>
+        <label for="messaggio">Messaggio</label>
+      </p-floatlabel>
+      <p-message
+        [life]="3000"
+        severity="error"
+        variant="simple"
+        size="small"
+        text="Il messaggio è obbligatorio"
+        *ngIf="
+          form.controls['messaggio'].invalid &&
+          form.controls['messaggio'].touched
+        "
+      ></p-message>
+    </div>
+    @if (this.inviato && !this.errore){
+    <div class="flex w-max justify-content-center">
+      <p-message
+        size="small"
+        variant="simple"
+        severity="success"
+        text="Messaggio inviato con successo!"
+        [life]="10000"
+        styleClass="flex justify-content-center"
+      ></p-message>
+    </div>
+    }
+    <div class="field col-12 justify-content-center flex">
+      <button
+        pButton
+        type="submit"
+        label="Invia"
+        iconPos="left"
+        icon="pi pi-send"
+        [severity]="'primary'"
+        [disabled]="!form.valid"
+        [class]="
+          form.valid
+            ? 'p-button-rounded p-button-raised'
+            : 'p-button-rounded p-button-outlined'
+        "
+      ></button>
+    </div>
+  </form>
+  <p-toast position="top-center" [life]="5000"></p-toast>
 </div>
