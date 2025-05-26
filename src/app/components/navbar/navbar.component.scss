@@ -205,7 +205,7 @@
   :host ::ng-deep .p-menubar-root-list {
     justify-content: center;
     a:hover {
-      color: #aaaaaa;
+      color: var(--oratorio-blue-600);
       transition: all 0.3s ease;
     }
   }

@@ -3,9 +3,10 @@ import { pointWidth } from './../../../../node_modules/@types/three/src/Three.TS
 import { ThreeMFLoader } from './../../../../node_modules/@types/three/examples/jsm/loaders/3MFLoader.d';
 import { HelixCurve } from './../../../../node_modules/@types/three/examples/jsm/curves/CurveExtras.d';
 import { Component, AfterViewInit, ElementRef, OnDestroy, ViewChild } from '@angular/core';
-import * as THREE from 'three';
 import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
+import * as THREE from 'three';
+
 
 @Component({
   selector: 'app-hero',

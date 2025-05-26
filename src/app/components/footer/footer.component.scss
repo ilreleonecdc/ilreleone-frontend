@@ -51,11 +51,16 @@ $text-color: #373b3f;
         font-size: smaller;
         color: $text-color;
       }
+      a {
+        font-size: smaller;
+        color: $text-color;
+        text-decoration: solid underline;
+      }
       #oratorio {
         color: var(--oratorio-blue-700);
       }
       #cdc {
-        color: var(--oratorio-red-400);
+        color: var(--oratorio-red-500);
       }
       #releone {
         color: var(--p-primary-600);
