@@ -1,5 +1,6 @@
 import { definePreset } from '@primeng/themes';
 import Aura from '@primeng/themes/aura';
+import { config } from 'rxjs';
 
 export const MyBrandPreset = definePreset(Aura, {
   semantic: {

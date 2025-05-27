@@ -92,6 +92,8 @@ export class ContattiComponent implements OnInit{
         this.messageService.add({ severity: 'error', summary: 'Errore', detail: 'Errore imprevisto, si prega di riprovare.' });
         this.markAllAsTouched();
       }
+      this.inviato = false;
+      this.errore = false;
     }
   }
 
