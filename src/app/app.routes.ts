@@ -11,18 +11,20 @@ export const routes: Routes = [
     redirectTo: ''
   },
   {
-    path: 'spettacoli',
-    loadComponent: () =>
-      import('./pages/spettacolo/spettacolo.component').then(
-        (m) => m.SpettacoloComponent
-      ),
-  },
-  {
     path: 'compagnia',
-    loadComponent: () =>
-      import('./pages/compagnia/compagnia.component').then(
-        (m) => m.CompagniaComponent
-      ),
+    children: [
+      {
+        path: 'cast',
+        loadComponent: () =>
+          import('./pages/compagnia/cast/cast.component').then(
+            (m) => m.CastComponent)
+      },
+      {
+        path: 'spettacoli',
+        loadComponent: () => import('./pages/compagnia/spettacoli/spettacoli.component').then(
+          (m)=>m.SpettacoliComponent)
+      }
+    ]
   },
   {
     path: 'eventi',

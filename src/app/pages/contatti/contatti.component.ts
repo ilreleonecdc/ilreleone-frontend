@@ -79,21 +79,19 @@ export class ContattiComponent implements OnInit{
           this.errore = false;
           console.log(contattoToSend)
           this.form.reset();
+          this.messageService.add({ severity: 'success', summary: `Pratica avviata:\n ${contattoToSend.numeroPratica}`, detail: 'Messaggio inviato con successo!' });
         },
         error: () => {
           this.errore = true;
           this.inviato = false;
+          this.messageService.add({ severity: 'error', summary: 'Errore', detail: 'Errore imprevisto, si prega di riprovare.' });
+          this.markAllAsTouched();
         }
       });
-      if (this.inviato && !this.errore) {
-        this.messageService.add({ severity: 'success', summary: `Pratica avviata:\n ${contattoToSend.numeroPratica}`, detail: 'Messaggio inviato con successo!' });
-      }
-      else {
-        this.messageService.add({ severity: 'error', summary: 'Errore', detail: 'Errore imprevisto, si prega di riprovare.' });
-        this.markAllAsTouched();
-      }
-      this.inviato = false;
-      this.errore = false;
+      setTimeout(() => {
+        this.inviato = false;
+        this.errore = false;
+      }, 10000);
     }
   }
 

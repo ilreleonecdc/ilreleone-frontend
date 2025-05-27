@@ -40,8 +40,8 @@ export class NavbarComponent implements OnInit {
       { label: 'Home', routerLink: '/home' },
       {
         label: 'Compagnia', items: [
-          { label: 'Chi Siamo', routerLink: '/compagnia' },
-          { label: 'Spettacoli', routerLink: '/spettacoli' },
+          { label: 'Chi Siamo', routerLink: '/compagnia/cast' },
+          { label: 'Spettacoli', routerLink: '/compagnia/spettacoli' },
         ]
       },
       { label: 'Grest 2025', routerLink: '/grest' },

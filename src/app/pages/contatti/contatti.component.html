@@ -1,15 +1,55 @@
 <div class="w-full mb-6">
   <p style="font-weight: 300">Non riesci a trovare quello che cerchi?</p>
+  <p style="font-weight: 300; margin-top: 1.75rem">Hai una domanda da porci?</p>
+</div>
+
+<div class="card contatti">
+  <div class="card-item telefono">
+    <div class="circle whatsapp">
+      <i class="fa-brands fa-whatsapp fa-xl" style="color: #fff"></i>
+    </div>
+    <span class="value">+39 3662873862</span>
+  </div>
+  <div class="card-item email">
+    <div class="circle email">
+      <i
+        class="fa-solid fa-envelope fa-lg"
+        style="color: #fff"
+      ></i>
+    </div>
+    <span class="value">info&#64;oratorioperdiqua.it</span>
+  </div>
+  <div class="card-item address">
+    <div class="circle map">
+      <i
+        class="fa-solid fa-map-marker-alt fa-lg"
+        style="color: #fff"
+      >
+      </i>
+    </div>
+    <span class="value">Via Maria Mattia Pierini 5, <br> 06012, Cerbara, PG</span>
+  </div>
+  <div class="card-item social flex gap-4">
+    <div class="card-subitem flex align-items-center justify-content-center gap-1">
+      <i class="fa-brands fa-facebook fa-xl" style="color: #1877f2"></i>
+      <span class="value">Facebook</span>
+    </div>
+    <div class="card-subitem flex align-items-center justify-content-center gap-1">
+      <i class="fa-brands fa-instagram fa-xl" style="color: #e1306c"></i>
+      <span class="value">Instagram</span>
+    </div>
+  </div>
 </div>
 
 <div class="contact-container">
-  <h2 style="font-weight: 600">Contattaci</h2>
+  <h2>CONTATTACI</h2>
+  <h5>Compila il modulo qua sotto!</h5>
   <form
     [formGroup]="form"
     (ngSubmit)="onSubmit()"
     class="formgrid grid p-fluid"
   >
-    <div class="field col-12 md:col-5">
+    <div class="field col-12 md:col-6">
       <p-floatlabel>
         <input pInputText id="nome" type="text" formControlName="nome" />
         <label for="nome">Nome</label>
@@ -23,7 +63,7 @@
         *ngIf="form.controls['nome'].invalid && form.controls['nome'].touched"
       ></p-message>
     </div>
-    <div class="field col-12 md:col-5">
+    <div class="field col-12 md:col-6">
       <p-floatlabel>
         <input pInputText id="cognome" type="text" formControlName="cognome" />
         <label for="cognome">Cognome</label>
@@ -106,7 +146,7 @@
         severity="success"
         text="Ti ringraziamo per averci contattato, ti risponderemo al più presto!"
         [life]="10000"
-        styleClass="flex justify-content-center"
+        styleClass="flex justify-content-center text-center"
       ></p-message>
     </div>
     }
@@ -119,7 +159,6 @@
         icon="pi pi-send"
         [severity]="'primary'"
         [disabled]="!form.valid"
-        (click)="onSubmit()"
         [class]="
           form.valid
             ? 'p-button-rounded p-button-raised'
@@ -128,5 +167,5 @@
       ></button>
     </div>
   </form>
-  <p-toast position="top-center" [life]="5000"></p-toast>
+  <p-toast position="top-center" [life]="10000" [baseZIndex]="10000"></p-toast>
 </div>
