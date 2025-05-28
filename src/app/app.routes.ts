@@ -4,8 +4,13 @@ export const routes: Routes = [
   {
     path: '',
     loadComponent: () =>
-      import('./pages/home/home.component').then((m) => m.HomeComponent),
+      import('./cooming-soon/cooming-soon.component').then((m) => m.CoomingSoonComponent),
   },
+  // {
+  //   path: '',
+  //   loadComponent: () =>
+  //     import('./pages/home/home.component').then((m) => m.HomeComponent),
+  // },
   {
     path: 'home',
     redirectTo: ''
