@@ -36,11 +36,7 @@
               "node_modules/primeflex/primeflex.css",
               "node_modules/hamburgers/dist/hamburgers.min.css"
             ],
-            "scripts": [
-              {
-                "build:prod": "ng build --configuration production --base-href=/"
-              }
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
