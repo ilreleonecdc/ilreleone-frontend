@@ -1,1 +1,0 @@
-import{Ha as n,Ya as a,Za as o,ob as s}from"./chunk-ARMGOPD6.js";var p=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=n({type:t,selectors:[["app-cast"]],decls:2,vars:0,template:function(e,i){e&1&&(a(0,"p"),s(1,"cast works!"),o())},encapsulation:2})};export{p as CastComponent};
