@@ -4,13 +4,8 @@ export const routes: Routes = [
   {
     path: '',
     loadComponent: () =>
-      import('./cooming-soon/cooming-soon.component').then((m) => m.CoomingSoonComponent),
+      import('./pages/home/home.component').then((m) => m.HomeComponent),
   },
-  // {
-  //   path: '',
-  //   loadComponent: () =>
-  //     import('./pages/home/home.component').then((m) => m.HomeComponent),
-  // },
   {
     path: 'home',
     redirectTo: ''

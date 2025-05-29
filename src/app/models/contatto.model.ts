@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid';
 export interface IContatto{
   numeroPratica: string;
   nome: string;
@@ -16,7 +17,8 @@ export class Contatto implements IContatto{
   messaggio: string;
 
   constructor() {
-    this.numeroPratica = `PR-${new Date().toISOString().slice(0, 10).replace(/-/g, '')}-${crypto.randomUUID().substring(0, 4).toUpperCase()}`;
+    // this.numeroPratica = `PR-${new Date().toISOString().slice(0, 10).replace(/-/g, '')}-${uuidv4().substring(0, 4).toUpperCase()}`;
+    this.numeroPratica = '';
     this.nome = '';
     this.cognome = '';
     this.email = '';

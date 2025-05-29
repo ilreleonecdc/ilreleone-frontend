@@ -67,13 +67,14 @@ export class ContattiComponent implements OnInit{
   onSubmit() {
     if (this.form.valid) {
       const contattoToSend: Contatto = new Contatto();
+      contattoToSend.numeroPratica = '';
       contattoToSend.nome = this.form.value.nome;
       contattoToSend.cognome = this.form.value.cognome;
       contattoToSend.email = this.form.value.email;
       contattoToSend.oggettoRichiesta = this.form.value.oggetto;
       contattoToSend.messaggio = this.form.value.messaggio;
 
-      this.contattoService.sendContatto(contattoToSend).subscribe({
+    this.contattoService.sendContatto(contattoToSend).subscribe({
         next: () => {
           this.inviato = true;
           this.errore = false;

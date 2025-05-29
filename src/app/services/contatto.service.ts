@@ -11,6 +11,6 @@ export class ContattoService {
   constructor() { }
 
   public sendContatto(contatto: Contatto) {
-    return this.httpClient.post('https://httpbin.org/post', contatto);
+    return this.httpClient.post('https://oratorio-backend.onrender.com/api/contatto', contatto);
   }
 }
