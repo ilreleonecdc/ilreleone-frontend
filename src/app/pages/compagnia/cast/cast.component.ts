@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
+import { isEmpty } from 'rxjs';
 
 @Component({
   selector: 'app-cast',
@@ -16,8 +17,8 @@ export class CastComponent implements OnInit {
     const rawCast = [
       { name: "Francesco", surname:"Renghi", role: "Attore", char: "Zazu", quote: "Il palco è magia" },
       { name: "Francesco", surname:"Falomi", role: "Attore/Regista", char: "Rafiki", quote: "Il palco è magia" },
-      { name: "Tommaso", surname:"Della Vedova", role: "Attore", char: "Scar", quote: "Il palco è magia" },
       { name: "Chiara", surname:"Brozzi", role: "Attrice", char: "Timon", quote: "Il palco è magia" },
+      { name: "Tommaso", surname:"Della Vedova", role: "Attore", char: "Scar", quote: "Il palco è magia" },
       { name: "Filippo", surname:"Caidominici", role: "Attore", char: "Pumbaa", quote: "Il palco è magia" },
       { name: "Christian", surname:"Pescari", role: "Attore", char: "Mufasa", quote: "Il palco è magia" },
       { name: "Tommaso", surname:"Ascosi", role: "Attore", char: "Simba (adulto)", quote: "Il palco è magia" },
@@ -30,9 +31,10 @@ export class CastComponent implements OnInit {
       { name: "Viola", surname:"Signorelli", role: "Attrice", char: "Sarabi", quote: "Il palco è magia" },
     ]
 
+
     this.cast = rawCast.map(c => ({
       ...c,
-      photo: `../../../../assets/cast/${c.name.toLowerCase()}-${c.surname.toLowerCase()}.jfif`
+      photo: `../../../../assets/cast/${c.name.toLowerCase()}-${c.surname.toLowerCase().replace(/\s+/g, "")}.jfif`
     }))
   }
 }

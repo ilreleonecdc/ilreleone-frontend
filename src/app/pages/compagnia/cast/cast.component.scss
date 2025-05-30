@@ -1,13 +1,44 @@
-.title{
+.title {
   justify-content: center;
   background: var(--p-primary-900);
   padding: 1rem;
 }
 
-.cards-wrapper{
+.cards-wrapper {
   flex-direction: column;
   flex-wrap: wrap;
   gap: 3rem;
   justify-content: center;
-  padding: 2rem;
+  padding: 4rem;
+}
+
+:host ::ng-deep .p-component {
+  border-radius: 1.5rem;
+  box-shadow:
+    0 10px 15px rgba(0, 0, 0, 0.1),
+    0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+:host ::ng-deep .p-card-header {
+  padding: 0;
+}
+
+:host ::ng-deep .p-card-body {
+}
+
+:host ::ng-deep .p-card-content {
+  padding: 1rem 0 0;
+  font-weight: 300;
+  font-style: italic;
+  color: #333;
+}
+
+.img-wrapper {
+  border-radius: 1.5rem 1.5rem 0 0;
+  box-shadow:
+    0 5px 10px rgba(154, 160, 185, 0.05),
+    0 15px 40px rgba(166, 173, 201, 0.2);
+  img {
+    object-fit: cover;
+  }
 }
