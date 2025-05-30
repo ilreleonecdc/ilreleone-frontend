@@ -1,1 +1,27 @@
-<p>cast works!</p>
+<div class="title flex text-center w-full ">
+  <h2 style="font-weight: 700; font-style: italic; color: #fff">
+    Scopri il Cast
+  </h2>
+</div>
+
+<div class="flex cards-wrapper">
+  @for (card of cast; track $index) {
+  <p-card class="card">
+    <ng-template #header>
+      <div class="img-wrapper flex p-2 justify-content-center">
+        <img src="{{ card.photo }}" alt="Portrait" />
+      </div>
+    </ng-template>
+    <ng-template #title
+      >{{ card.name }}
+      <span style="font-weight: 300; font-size: smaller; font-style: italic">{{
+        card.surname
+      }}</span></ng-template
+    >
+    <ng-template #subtitle>{{ card.role }}: {{ card.char }}</ng-template>
+    <ng-template #content
+      ><p class="text-center">"{{ card.quote }}"</p></ng-template
+    >
+  </p-card>
+  }
+</div>

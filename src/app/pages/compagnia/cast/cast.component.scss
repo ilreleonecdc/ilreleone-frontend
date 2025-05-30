@@ -1,0 +1,13 @@
+.title{
+  justify-content: center;
+  background: var(--p-primary-900);
+  padding: 1rem;
+}
+
+.cards-wrapper{
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: center;
+  padding: 2rem;
+}
