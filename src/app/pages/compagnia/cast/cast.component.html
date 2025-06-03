@@ -1,9 +1,5 @@
-<div class="title flex text-center w-full">
-  <h2
-    style="font-weight: 700; font-style: italic; color: #fff; font-size: 1.5rem"
-  >
-    Scopri il Cast
-  </h2>
+<div class="title md:m-0">
+  <h2>Scopri il Cast</h2>
 </div>
 
 <div class="flex cards-wrapper md:flex-row align-items-center">
@@ -21,6 +17,8 @@
           [src]="card.photo"
           [alt]="card.name + ' ' + card.surname"
           [class.hidden]="card.isFlipped"
+          (swipeleft)="card.isFlipped = !card.isFlipped"
+          (swiperight)="card.isFlipped = !card.isFlipped"
         />
         <img
           class="w-full max-h-15rem overflow-hidden char-img"

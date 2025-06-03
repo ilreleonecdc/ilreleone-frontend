@@ -82,8 +82,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--p-surface);
 
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     font-size: 20px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 20px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: 22px;
+  }
+
+  @media screen and (min-width: 2560px) {
+    font-size: 26px;
   }
 }
 
@@ -125,4 +137,22 @@ ul {
 :focus-visible {
   outline: 2px dashed #f4b400;
   outline-offset: 3px;
+}
+
+.title {
+  display: flex;
+  text-align: center;
+  width: 100%;
+  justify-content: center;
+  background: var(--p-primary-900);
+  padding: 1rem;
+  margin: 2rem 0 0;
+  position: sticky;
+
+  h2 {
+    font-weight: 700;
+    font-style: italic;
+    font-size: 2rem;
+    color: #ffffff;
+  }
 }

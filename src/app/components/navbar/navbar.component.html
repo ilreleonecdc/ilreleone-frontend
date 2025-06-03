@@ -1,6 +1,10 @@
 <div class="scroll-progress-bar" [style.width.%]="scrollProgress"></div>
 
-<div class="navbar-wrapper" [ngClass]="{ scrolled: isScrolled }" id="navbar">
+<div
+  class="navbar-wrapper flex md:p-3"
+  [ngClass]="{ scrolled: isScrolled }"
+  id="navbar"
+>
   <div
     class="spacer"
     onclick="window.location.href='/home'"
@@ -14,8 +18,9 @@
     <h3>
       <span style="font-weight: 500">Oratorio </span>
       <span style="font-style: italic"
-        ><span id="span1">Per</span><span id="span2">Di</span
-        ><span id="span3">Qua</span></span
+        ><span class="perdiqua" id="span1">Per</span
+        ><span class="perdiqua" id="span2">Di</span
+        ><span class="perdiqua" id="span3">Qua</span></span
       >
     </h3>
   </div>
