@@ -1,40 +1,68 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { ButtonModule } from 'primeng/button';
+import { CommonModule} from '@angular/common';
+import { Component, Injectable, OnInit} from '@angular/core';
+import { ButtonModule} from 'primeng/button';
 import { CardModule } from 'primeng/card';
-import { isEmpty } from 'rxjs';
+import { SkeletonModule } from 'primeng/skeleton'
+import { HammerGestureConfig, HAMMER_GESTURE_CONFIG, BrowserModule, HammerModule } from '@angular/platform-browser';
+import * as hammer from 'hammerjs';
+
+@Injectable()
+export class MyHammerConfig extends HammerGestureConfig {
+  override overrides = <any>{
+    swipe: { direction: hammer.DIRECTION_ALL  }
+  };
+}
 
 @Component({
   selector: 'app-cast',
-  imports: [CommonModule, CardModule, ButtonModule],
+  imports: [HammerModule, CommonModule, CardModule, ButtonModule, SkeletonModule],
   templateUrl: './cast.component.html',
-  styleUrl: './cast.component.scss'
+  styleUrl: './cast.component.scss',
+  providers: [{provide: HAMMER_GESTURE_CONFIG, useClass: MyHammerConfig}]
 })
 export class CastComponent implements OnInit {
   public cast: any;
+  public hovered: string | null = null;
+
+  public rotation: number = 0;
+  public flipped: boolean = false;
 
   ngOnInit(): void {
     const rawCast = [
-      { name: "Francesco", surname:"Renghi", role: "Attore", char: "Zazu", quote: "Il palco è magia" },
-      { name: "Francesco", surname:"Falomi", role: "Attore/Regista", char: "Rafiki", quote: "Il palco è magia" },
-      { name: "Chiara", surname:"Brozzi", role: "Attrice", char: "Timon", quote: "Il palco è magia" },
-      { name: "Tommaso", surname:"Della Vedova", role: "Attore", char: "Scar", quote: "Il palco è magia" },
-      { name: "Filippo", surname:"Caidominici", role: "Attore", char: "Pumbaa", quote: "Il palco è magia" },
-      { name: "Christian", surname:"Pescari", role: "Attore", char: "Mufasa", quote: "Il palco è magia" },
-      { name: "Tommaso", surname:"Ascosi", role: "Attore", char: "Simba (adulto)", quote: "Il palco è magia" },
-      { name: "Letizia", surname:"Baldelli", role: "Attrice", char: "Nala (adulta)", quote: "Il palco è magia" },
-      { name: "Martina", surname:"Fontana", role: "Attrice", char: "Banzai", quote: "Il palco è magia" },
-      { name: "Laura", surname:"Feligioni", role: "Attrice", char: "Shenzi", quote: "Il palco è magia" },
-      { name: "Lucia", surname:"Polverini", role: "Attrice", char: "Ed", quote: "Il palco è magia" },
-      { name: "Diletta", surname:"", role: "Attrice", char: "Nala (giovane)", quote: "Il palco è magia" },
-      { name: "Tobia", surname:"", role: "Attore", char: "Simba (giovane)", quote: "Il palco è magia" },
-      { name: "Viola", surname:"Signorelli", role: "Attrice", char: "Sarabi", quote: "Il palco è magia" },
+      { name: "Francesco", surname: "Renghi", role: "Attore", charRole: "Maggiordomo del Re", char: "Zazu", quote: "Il palco è magia", charQuote: "Tua madre non ti ha mai detto che non si gioca con il cibo?" },
+      { name: "Francesco", surname: "Falomi", role: "Attore/Regista", charRole: "Saggio Sangoma", char: "Rafiki", quote: "Il palco è magia", charQuote: "Simba è Vivo!" },
+      { name: "Chiara", surname: "Brozzi", role: "Attrice", charRole: "Amico fedele", char: "Timon", quote: "Il palco è magia", charQuote: "Ho un'idea! E se stesse dalla nostra parte?" },
+      { name: "Tommaso", surname: "Della Vedova", role: "Attore", charRole: "Zio perfido", char: "Scar", quote: "Il palco è magia", charQuote: "Sono circondato da un branco di idioti" },
+      { name: "Filippo", surname: "Caidominici", role: "Attore", charRole: "Amico fedele", char: "Pumbaa", quote: "Il palco è magia", charQuote: "Io mi inquino ai vostri piedi!" },
+      { name: "Christian", surname: "Pescari", role: "Attore", charRole: "Re delle Terre del Branco", char: "Mufasa", quote: "Il palco è magia", charQuote: "Un giorno il Sole tramenterà su di me, e si alzerà con te" },
+      { name: "Tommaso", surname: "Ascosi", role: "Attore", charRole: "", char: "Simba (adulto)", quote: "Il palco è magia", charQuote: "Io non sono il Re" },
+      { name: "Letizia", surname: "Baldelli", role: "Attrice", charRole: "Compagna devota", char: "Nala (adulta)", quote: "Il palco è magia", charQuote: "Mi sei mancato molto..." },
+      { name: "Martina", surname: "Fontana", role: "Attrice", charRole: "Iena", char: "Banzai", quote: "Il palco è magia", charQuote: "Ed, finiscila!" },
+      { name: "Laura", surname: "Feligioni", role: "Attrice", charRole: "Iena", char: "Shenzi", quote: "Il palco è magia", charQuote: "Ci penso io..." },
+      { name: "Lucia", surname: "Polverini", role: "Attrice", charRole: "Iena", char: "Ed", quote: "Il palco è magia", charQuote: "EHEHEHEHEHEHEHEHEHEH!!" },
+      { name: "Diletta", surname: "", role: "Attrice", charRole: "Amica di Simba", char: "Nala (giovane)", quote: "Il palco è magia", charQuote: "Shh Simba, non vedi che sto cacciando con mia madre?" },
+      { name: "Tobia", surname: "", role: "Attore", charRole: "Aspirante Re", char: "Simba (giovane)", quote: "Il palco è magia", charQuote: "Uuuh guarda, Becco di Banana è spaventato!" },
+      { name: "Viola", surname: "Signorelli", role: "Attrice", charRole: "Regina delle Terre del Branco", char: "Sarabi", quote: "Il palco è magia", charQuote: "Simba, dimmi che non è vero." },
     ]
 
 
     this.cast = rawCast.map(c => ({
       ...c,
-      photo: `../../../../assets/cast/${c.name.toLowerCase()}-${c.surname.toLowerCase().replace(/\s+/g, "")}.jfif`
+      photo: `../../../../assets/cast/${c.name.toLowerCase()}-${c.surname.toLowerCase().replace(/\s+/g, "")}.jfif`,
+      charPhoto: `../../../../assets/cast/personaggi/${c.char.toLowerCase().replace(/\s+/g, "")}.webp`,
+      isFlipped: false
     }))
+  }
+
+  onPan(event: any) {
+    this.rotation = Math.min(Math.max(event.deltaX / 3, -180), 180);
+  }
+
+  onPanEnd(event: any) {
+    if (Math.abs(this.rotation) > 90) {
+      this.flipped = !this.flipped;
+    }
+
+    this.rotation = 0;
   }
 }

@@ -2,7 +2,11 @@
   justify-content: center;
   background: var(--p-primary-900);
   padding: 1rem;
-  position: sticky
+  position: sticky;
+}
+
+.hidden {
+  display: none !important;
 }
 
 .cards-wrapper {
@@ -24,11 +28,10 @@
   padding: 0;
 }
 
-:host ::ng-deep .p-card-body {
-}
+// :host ::ng-deep .p-card-body {
+// }
 
 :host ::ng-deep .p-card-content {
-  padding: 1rem 0 0;
   font-weight: 300;
   font-style: italic;
   color: #333;
@@ -39,6 +42,7 @@
   box-shadow:
     0 5px 10px rgba(154, 160, 185, 0.05),
     0 15px 40px rgba(166, 173, 201, 0.2);
+  height: 14rem;
   img {
     object-fit: cover;
   }

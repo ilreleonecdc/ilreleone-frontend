@@ -113,9 +113,14 @@ input {
   &.email {
     font-size: 0.9rem;
   }
-  &.social{
+  &.social {
     justify-content: space-around;
   }
+}
+
+.card-item > *:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease;
 }
 
 .circle {
