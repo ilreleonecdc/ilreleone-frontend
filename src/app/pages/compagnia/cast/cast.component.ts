@@ -4,13 +4,18 @@ import { ButtonModule} from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { SkeletonModule } from 'primeng/skeleton'
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG, BrowserModule, HammerModule } from '@angular/platform-browser';
-import * as hammer from 'hammerjs';
+import * as Hammer from 'hammerjs';
 
 @Injectable()
 export class MyHammerConfig extends HammerGestureConfig {
-  override overrides = <any>{
-    swipe: { direction: hammer.DIRECTION_ALL  }
-  };
+  override buildHammer(element: HTMLElement) {
+    const mc = new Hammer.Manager(element);
+
+    mc.add(new Hammer.Swipe({ direction: Hammer.DIRECTION_HORIZONTAL }));
+    mc.add(new Hammer.Pan({ direction: Hammer.DIRECTION_VERTICAL, threshold: 10 }));
+
+    return mc;
+  }
 }
 
 @Component({
@@ -22,10 +27,7 @@ export class MyHammerConfig extends HammerGestureConfig {
 })
 export class CastComponent implements OnInit {
   public cast: any;
-  public hovered: string | null = null;
-
-  public rotation: number = 0;
-  public flipped: boolean = false;
+  public visible: boolean = false;
 
   ngOnInit(): void {
     const rawCast = [
@@ -52,17 +54,9 @@ export class CastComponent implements OnInit {
       charPhoto: `../../../../assets/cast/personaggi/${c.char.toLowerCase().replace(/\s+/g, "")}.webp`,
       isFlipped: false
     }))
-  }
 
-  onPan(event: any) {
-    this.rotation = Math.min(Math.max(event.deltaX / 3, -180), 180);
-  }
-
-  onPanEnd(event: any) {
-    if (Math.abs(this.rotation) > 90) {
-      this.flipped = !this.flipped;
-    }
-
-    this.rotation = 0;
+    setTimeout(() => {
+      this.visible = true;
+    }, 500)
   }
 }

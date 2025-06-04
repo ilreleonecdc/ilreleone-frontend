@@ -4,7 +4,7 @@
 
 <div class="p-4 mb-6">
   <p style="font-weight: 300">Non riesci a trovare quello che cerchi?</p>
-  <p style="font-weight: 300; margin-top: 1.75rem">Hai una domanda da porci?</p>
+  <p style="font-weight: 300; margin-top: 1.75rem">Hai una domanda da farci?</p>
 </div>
 
 <div class="card contatti">
@@ -79,7 +79,7 @@
     <div class="field col-12 md:col-6">
       <p-floatlabel>
         <input pInputText id="nome" type="text" formControlName="nome" />
-        <label for="nome">Nome</label>
+        <label for="nome">Nome*</label>
       </p-floatlabel>
       <p-message
         [life]="3000"
@@ -93,7 +93,7 @@
     <div class="field col-12 md:col-6">
       <p-floatlabel>
         <input pInputText id="cognome" type="text" formControlName="cognome" />
-        <label for="cognome">Cognome</label>
+        <label for="cognome">Cognome*</label>
       </p-floatlabel>
       <p-message
         [life]="3000"
@@ -109,7 +109,7 @@
     <div class="field col-12">
       <p-floatlabel>
         <input pInputText id="email" type="text" formControlName="email" />
-        <label for="email">Email</label>
+        <label for="email">Email*</label>
       </p-floatlabel>
       <p-message
         [life]="3000"
@@ -129,7 +129,7 @@
           optionValue="value"
           variant="filled"
         ></p-select>
-        <label for="oggetto">Oggetto</label></p-floatlabel
+        <label for="oggetto">Oggetto*</label></p-floatlabel
       >
       <p-message
         [life]="3000"
@@ -150,7 +150,7 @@
           rows="8"
           formControlName="messaggio"
         ></textarea>
-        <label for="messaggio">Messaggio</label>
+        <label for="messaggio">Messaggio*</label>
       </p-floatlabel>
       <p-message
         [life]="3000"
