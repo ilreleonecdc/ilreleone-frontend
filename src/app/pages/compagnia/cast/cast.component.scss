@@ -31,8 +31,13 @@
   img {
     object-fit: cover;
     object-position: top;
-    filter: grayscale(100%);
     transition: all 0.4s ease;
+  }
+}
+
+.face-front {
+  img {
+    filter: grayscale(100%);
   }
 }
 
