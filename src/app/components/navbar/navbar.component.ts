@@ -37,7 +37,6 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.items = [
-      { label: 'Home', routerLink: '/home' },
       {
         label: 'Compagnia', items: [
           { label: 'Chi Siamo', routerLink: '/compagnia/cast' },
@@ -48,6 +47,7 @@ export class NavbarComponent implements OnInit {
       { label: 'Eventi', routerLink: '/eventi' },
       { label: 'Galleria', routerLink: '/galleria' },
       { label: 'Contatti', routerLink: '/contatti' },
+      { label: 'About Us', routerLink: '/about-us' },
     ];
   }
 

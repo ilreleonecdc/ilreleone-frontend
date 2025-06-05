@@ -53,6 +53,13 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'about-us',
+    loadComponent: () =>
+      import('./pages/about-us/about-us.component').then(
+        (m) => m.AboutUsComponent
+      ),
+  },
+  {
     path: '404',
     loadComponent: () =>
       import('./pages/not-found/not-found.component').then(

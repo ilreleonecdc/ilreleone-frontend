@@ -4,78 +4,92 @@
 
 <div class="cards-wrapper flex md:flex-row align-items-center">
   @for (card of cast; track $index) {
-  <div class="flip-card-wrapper">
-    <div class="flip-card-inner" [class.flipped]="card.isFlipped">
-      <p-card
-        class="card front w-full h-full"
-        [class.visible]="visible"
-        (swipeleft)="card.isFlipped = !card.isFlipped"
-        (swiperight)="card.isFlipped = !card.isFlipped"
-        (click)="card.isFlipped = !card.isFlipped"
-      >
-        <ng-template #header>
-          <div class="img-wrapper">
-            <img
-              loading="lazy"
-              class="w-full max-h-15rem overflow-hidden actor-img"
-              [src]="card.photo"
-              [alt]="card.name + ' ' + card.surname"
-            />
-          </div>
-        </ng-template>
-        <ng-template #title>
-          <span
-            class="name"
-            style="color: var(--leone-red-500); font-weight: 700"
-            >{{ card.name.toUpperCase() }}
-          </span>
-          <span
-            style="font-weight: 300; font-size: smaller; font-style: italic"
-            >{{ card.surname }}</span
+  <div class="flip-card-wrapper" [class.flipped]="card.isFlipped">
+    <div class="flip-card-inner" [tabIndex]="$index">
+      <div class="face-front">
+        <p-card
+          class="card front"
+          [class.visible]="visible"
+          (swipeleft)="card.isFlipped = !card.isFlipped"
+          (swiperight)="card.isFlipped = !card.isFlipped"
+        >
+          <ng-template #header>
+            <div
+              class="img-wrapper"
+              (swipeleft)="card.isFlipped = !card.isFlipped"
+              (swiperight)="card.isFlipped = !card.isFlipped"
+            >
+              <img
+                loading="lazy"
+                class="w-full max-h-15rem overflow-hidden actor-img"
+                [src]="card.photo"
+                [alt]="card.name + ' ' + card.surname"
+                (swipeleft)="card.isFlipped = !card.isFlipped"
+                (swiperight)="card.isFlipped = !card.isFlipped"
+              />
+            </div>
+          </ng-template>
+          <ng-template #title>
+            <span
+              class="name"
+              style="color: var(--leone-red-500); font-weight: 700"
+              >{{ card.name.toUpperCase() }}
+            </span>
+            <span
+              style="font-weight: 300; font-size: smaller; font-style: italic"
+              >{{ card.surname }}</span
+            >
+          </ng-template>
+          <ng-template #subtitle
+            ><span class="font-light">{{ card.role }}</span>
+          </ng-template>
+          <ng-template #content>
+            <blockquote class="text-center mt-2">
+              "{{ card.quote }}"
+            </blockquote></ng-template
           >
-        </ng-template>
-        <ng-template #subtitle
-          ><span class="font-light">{{ card.role }}</span>
-        </ng-template>
-        <ng-template #content>
-          <blockquote class="text-center mt-2">
-            "{{ card.quote }}"
-          </blockquote></ng-template
+        </p-card>
+      </div>
+      <div class="face-back">
+        <p-card
+          class="card back"
+          [class.visible]="visible"
+          (swipeleft)="card.isFlipped = !card.isFlipped"
+          (swiperight)="card.isFlipped = !card.isFlipped"
         >
-      </p-card>
-      <p-card
-        class="card back"
-        [class.visible]="visible"
-        (swipeleft)="card.isFlipped = !card.isFlipped"
-        (swiperight)="card.isFlipped = !card.isFlipped"
-        (click)="card.isFlipped = !card.isFlipped"
-      >
-        <ng-template #header>
-          <div class="img-wrapper flex justify-content-center overflow-hidden">
-            <img
-              loading="lazy"
-              class="w-full max-h-15rem overflow-hidden actor-img"
-              [src]="card.charPhoto"
-              [alt]="card.char"
-            />
-          </div>
-        </ng-template>
-        <ng-template #title>
-          <span
-            class="name"
-            style="color: var(--leone-red-500); font-weight: 700"
-            >{{ card.char.toUpperCase() }}
-          </span>
-        </ng-template>
-        <ng-template #subtitle
-          ><span class="font-light">{{ card.charRole }}</span>
-        </ng-template>
-        <ng-template #content>
-          <blockquote class="text-center mt-2">
-            "{{ card.charQuote }}"
-          </blockquote></ng-template
-        >
-      </p-card>
+          <ng-template #header>
+            <div
+              class="img-wrapper"
+              (swipeleft)="card.isFlipped = !card.isFlipped"
+              (swiperight)="card.isFlipped = !card.isFlipped"
+            >
+              <img
+                loading="lazy"
+                class="w-full max-h-15rem overflow-hidden actor-img"
+                [src]="card.charPhoto"
+                [alt]="card.char"
+                (swipeleft)="card.isFlipped = !card.isFlipped"
+                (swiperight)="card.isFlipped = !card.isFlipped"
+              />
+            </div>
+          </ng-template>
+          <ng-template #title>
+            <span
+              class="name"
+              style="color: var(--leone-red-500); font-weight: 700"
+              >{{ card.char.toUpperCase() }}
+            </span>
+          </ng-template>
+          <ng-template #subtitle
+            ><span class="font-light">{{ card.charRole }}</span>
+          </ng-template>
+          <ng-template #content>
+            <blockquote class="text-center mt-2">
+              "{{ card.charQuote }}"
+            </blockquote></ng-template
+          >
+        </p-card>
+      </div>
     </div>
   </div>
   }
