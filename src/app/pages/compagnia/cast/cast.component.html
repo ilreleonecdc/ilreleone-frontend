@@ -7,7 +7,9 @@
 </div>
 
 <div class="subtitle">
-  <h3 class="animate__animated animate__lightSpeedInLeft animate__delay-1s">
+  <h3
+    class="bebas text-center animate__animated animate__lightSpeedInLeft animate_infinite animate__delay-1s mb-5"
+  >
     PERSONAGGI PRINCIPALI
   </h3>
 </div>
@@ -17,7 +19,7 @@
   <div
     class="flip-card-wrapper"
     [class.flipped]="card.isFlipped"
-    [class.hint]="$index === 0 && showHint"
+    [class.hint]="$index === 1 && showHint"
   >
     <div class="flip-card-inner" [tabIndex]="$index">
       <div class="face-front">
@@ -51,11 +53,12 @@
             </span>
             <span
               style="font-weight: 300; font-size: smaller; font-style: italic"
-              >{{ card.surname }}</span
+            >
+              {{ card.surname }}</span
             >
           </ng-template>
           <ng-template #subtitle
-            ><span class="font-light">{{ card.role }}</span>
+            ><span class="font-light text-xl">{{ card.role }}</span>
           </ng-template>
           <ng-template #content>
             <blockquote class="text-center mt-2">

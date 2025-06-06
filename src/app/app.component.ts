@@ -7,10 +7,12 @@ import { CoomingSoonComponent } from "./cooming-soon/cooming-soon.component";
 import * as AOS from 'aos';
 import { BrowserModule, HAMMER_GESTURE_CONFIG, HammerModule } from '@angular/platform-browser';
 import { MyHammerConfig } from './pages/compagnia/cast/cast.component';
+import { ViewportComponent } from "./components/viewport/viewport.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [HammerModule, RouterOutlet, ButtonModule, NavbarComponent, FooterComponent, CoomingSoonComponent],
+  imports: [CommonModule, HammerModule, RouterOutlet, ButtonModule, NavbarComponent, FooterComponent, CoomingSoonComponent, ViewportComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   providers: [{provide: HAMMER_GESTURE_CONFIG, useClass: MyHammerConfig}]
