@@ -1,10 +1,24 @@
 <div class="title md:m-0">
-  <h2>Scopri il Cast</h2>
+  <h2
+    class="animate__animated animate__tada animate__slow animate__repeat-1 animate__delay-1s"
+  >
+    Scopri il Cast
+  </h2>
+</div>
+
+<div class="subtitle">
+  <h3 class="animate__animated animate__lightSpeedInLeft animate__delay-1s">
+    PERSONAGGI PRINCIPALI
+  </h3>
 </div>
 
 <div class="cards-wrapper flex md:flex-row align-items-center">
   @for (card of cast; track $index) {
-  <div class="flip-card-wrapper" [class.flipped]="card.isFlipped">
+  <div
+    class="flip-card-wrapper"
+    [class.flipped]="card.isFlipped"
+    [class.hint]="$index === 0 && showHint"
+  >
     <div class="flip-card-inner" [tabIndex]="$index">
       <div class="face-front">
         <p-card

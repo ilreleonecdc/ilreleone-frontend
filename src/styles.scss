@@ -156,3 +156,16 @@ ul {
     color: #ffffff;
   }
 }
+
+.subtitle {
+  width: 100%;
+  justify-items: center;
+  padding: 1rem;
+  margin-top: 2rem;
+
+  h3 {
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: var(--p-secondary-500);
+  }
+}
