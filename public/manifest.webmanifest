@@ -1,8 +1,8 @@
 {
-  "name": "ilreleone-frontend",
-  "short_name": "ilreleone-frontend",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "name": "Oratorio PerDiQua",
+  "short_name": "OratorioPDQ",
+  "theme_color": "#009fe3",
+  "background_color": "#FAFAFA",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
