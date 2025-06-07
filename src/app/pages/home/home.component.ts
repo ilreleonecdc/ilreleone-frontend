@@ -29,7 +29,10 @@ export class HomeComponent {
     const immagini = document.querySelectorAll('.parallax-img');
 
     immagini.forEach((img: Element) => {
-      const offset = (scrollTop * 0.05); // cambia 0.2 per un effetto più o meno intenso
+      let offset = (scrollTop * 0.05); // cambia 0.2 per un effetto più o meno intenso
+      if (this.viewportWidth > 1024) {
+        offset = (scrollTop * 0.3)
+      }
       (img as HTMLElement).style.transform = `translateY(-${offset}px)`;
     });
   }

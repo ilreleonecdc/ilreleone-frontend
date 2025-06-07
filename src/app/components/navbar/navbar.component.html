@@ -1,21 +1,18 @@
 <div class="scroll-progress-bar" [style.width.%]="scrollProgress"></div>
 
-<div
-  class="navbar-wrapper flex md:p-3"
-  [ngClass]="{ scrolled: isScrolled }"
-  id="navbar"
->
+<div class="navbar-wrapper" [ngClass]="{ scrolled: isScrolled }" id="navbar">
   <div
-    class="spacer"
+    class="spacer m-0 p-0"
     onclick="window.location.href='/home'"
     style="cursor: pointer"
   >
     <img
+      class="m-0 p-0"
       src="../../../assets/oratorioSVG.svg"
       alt="Oratorio PerDiQua"
       id="logo-oratorio"
     />
-    <h3>
+    <h3 class="m-0 p-0">
       <span style="font-weight: 500">Oratorio </span>
       <span style="font-style: italic"
         ><span class="perdiqua" id="span1">Per</span
