@@ -121,7 +121,8 @@ $text-color: #373b3f;
     }
   }
   .texts {
-    width: 35%;
+    border: 1px solid red;
+    width: 30%;
     display: flex;
     flex-wrap: wrap;
     flex: 0 0 auto;
@@ -178,6 +179,11 @@ $text-color: #373b3f;
       margin-top: 25px;
       text-align: center;
     }
+
+    .texts {
+      width: 70%;
+      margin-bottom: 1rem;
+    }
   }
 }
 
@@ -193,6 +199,12 @@ $text-color: #373b3f;
         text-align: left;
         margin-right: auto;
       }
+    }
+  }
+
+  .footer-end {
+    .texts {
+      width: 90%;
     }
   }
 }
