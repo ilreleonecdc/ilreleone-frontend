@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
@@ -15,7 +15,6 @@ import { Contatto } from '../../models/contatto.model';
 @Component({
   selector: 'app-contatti',
   imports: [
-    CommonModule,
     ReactiveFormsModule,
     InputTextModule,
     ButtonModule,
@@ -25,7 +24,7 @@ import { Contatto } from '../../models/contatto.model';
     MessageModule,
     ToastModule,
     SelectModule
-  ],
+],
   templateUrl: './contatti.component.html',
   styleUrl: './contatti.component.scss'
 })
