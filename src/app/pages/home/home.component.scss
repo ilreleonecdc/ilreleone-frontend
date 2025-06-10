@@ -1,22 +1,24 @@
 // region MOBILE
 .cards-container {
-  margin: 1rem;
-  border-radius: 46px;
-  padding: 1rem;
+  // border-radius: 3rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 3rem;
 }
 
+.card-wrapper {
+  border-radius: 2rem;
+}
+
 :host ::ng-deep .p-card {
-  // tutto lo spazio della card
   display: flex;
   justify-self: center;
   width: 100%;
-  border-radius: 30px;
+  height: fit-content;
+  border-radius: 2rem;
   overflow: hidden;
   max-height: fit-content;
-  background-color: #ffffff;
   box-shadow:
     0 5px 10px rgba(154, 160, 185, 0.05),
     0 15px 40px rgba(166, 173, 201, 0.2);
@@ -24,15 +26,13 @@
 
 :host ::ng-deep .p-card-header {
   // header
-  border-radius: 1.5rem 1.5rem 0 0;
+  // border-radius: 1.5rem 1.5rem 0 0;
   padding: 1rem 1.75rem 0;
   .img-container {
-    // border-radius: 14px;
     overflow: hidden;
     height: 12rem;
     padding: 10px;
-    // background-color: #ffd4e4;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
     img {
       justify-self: center;
       border-radius: inherit;
@@ -48,7 +48,7 @@
 
 :host ::ng-deep .p-card-body {
   // body
-  border-radius: 0 0 1rem 1rem;
+  // border-radius: 0 0 1rem 1rem;
 }
 
 :host ::ng-deep .p-card-title {
@@ -64,7 +64,7 @@
 
 :host ::ng-deep .p-card-content {
   // paragrafo
-  color: black;
+  color: #000;
   font-weight: 400;
   font-size: 13px;
 }
@@ -94,6 +94,14 @@
   color: var(--verde-500);
 }
 
+::ng-deep .card.lib .p-card-header {
+  padding: 0;
+
+  img {
+    filter: blur(1px);
+  }
+}
+
 // endregion
 
 // region TABLET
@@ -115,7 +123,7 @@
   :host ::ng-deep .p-card-header {
     overflow: visible;
     .img-container {
-      height: 22rem;
+      height: 20rem;
       padding: 10px;
       border-bottom: 2px solid black;
       img {

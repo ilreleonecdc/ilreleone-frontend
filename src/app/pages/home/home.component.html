@@ -17,26 +17,23 @@
 </div>
 
 <div class="cards-container">
+  @for (card of cards; track $index) {
   <div class="card-wrapper">
-    <p-card class="card oratorio">
+    <p-card class="card {{ card.class }}">
       <ng-template pTemplate="header">
         <div class="img-container">
           <img
-            src="../../../assets/oratorioSVG.svg"
-            alt="Oratorio PerDiQua"
-            id="oratorio-img"
+            src="{{ card.headerImg }}"
+            alt="card.title"
             class="parallax-img"
           />
         </div>
       </ng-template>
-      <ng-template pTemplate="title">Oratorio PerDiQua</ng-template>
-      <ng-template pTemplate="subtitle">Parrocchia di Cerbara</ng-template>
+      <ng-template pTemplate="title">{{ card.title }}</ng-template>
+      <ng-template pTemplate="subtitle">{{ card.subtitle }}</ng-template>
       <ng-template pTemplate="content"
         ><p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
-          sed consequuntur error repudiandae numquam deserunt quisquam repellat
-          libero asperiores earum nam nobis, culpa ratione quam perferendis
-          esse, cupiditate neque quas!
+          {{ card.content }}
         </p></ng-template
       >
       <ng-template pTemplate="footer">
@@ -45,76 +42,42 @@
           icon="pi pi-info-circle"
           class="p-button-outlined"
           severity="info"
-          [routerLink]="'/oratorioperdiqua'"
+          [routerLink]="'{{card.routerlink}}'"
         ></p-button>
       </ng-template>
     </p-card>
   </div>
-  <div class="card-wrapper">
-    <p-card class="card leone">
-      <ng-template pTemplate="header">
-        <div class="img-container">
-          <img
-            src="../../../assets/logoLeoneSVG.svg"
-            alt="Il Re Leone CDC"
-            id="leone-img"
-            class="parallax-img"
-          />
-        </div>
-      </ng-template>
-      <ng-template pTemplate="title">Il Re Leone CDC</ng-template>
-      <ng-template pTemplate="subtitle">Il Musical</ng-template>
-      <ng-template pTemplate="content"
-        ><p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
-          sed consequuntur error repudiandae numquam deserunt quisquam repellat
-          libero asperiores earum nam nobis, culpa ratione quam perferendis
-          esse, cupiditate neque quas!
-        </p></ng-template
-      >
-      <ng-template pTemplate="footer">
-        <p-button
-          label="Scopri di più"
-          icon="pi pi-info-circle"
-          class="p-button-outlined"
-          severity="info"
-          [routerLink]="'/ilreleonecdc'"
-        ></p-button>
-      </ng-template>
-    </p-card>
-  </div>
-  <div class="card-wrapper">
-    <div class="subtitle">
-      <h3>PROSSIMAMENTE</h3>
-    </div>
-    <p-card class="card lib">
-      <ng-template pTemplate="header">
-        <div class="img-container">
-          <img
-            src="../../../assets/libverde.jpg"
-            alt="Libreria Verde"
-            id="lib-img"
-          />
-        </div>
-      </ng-template>
-      <ng-template pTemplate="title">Libreria Verde</ng-template>
-      <ng-template pTemplate="content"
-        ><p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
-          sed consequuntur error repudiandae numquam deserunt quisquam repellat
-          libero asperiores earum nam nobis, culpa ratione quam perferendis
-          esse, cupiditate neque quas!
-        </p></ng-template
-      >
-      <ng-template pTemplate="footer">
-        <p-button
-          label="Scopri di più"
-          icon="pi pi-info-circle"
-          class="p-button-outlined"
-          severity="info"
-          [routerLink]="'/libreriaverde'"
-        ></p-button>
-      </ng-template>
-    </p-card>
-  </div>
+  }
+</div>
+<div class="subtitle">
+  <h3>PROSSIMAMENTE</h3>
+</div>
+<div class="cards-container">
+  <p-card class="card lib">
+    <ng-template pTemplate="header">
+      <img
+        src="../../../assets/libverde.jpg"
+        alt="Libreria Verde"
+        id="lib-img"
+      />
+    </ng-template>
+    <ng-template pTemplate="title">Libreria Verde</ng-template>
+    <ng-template pTemplate="content"
+      ><p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed
+        consequuntur error repudiandae numquam deserunt quisquam repellat libero
+        asperiores earum nam nobis, culpa ratione quam perferendis esse,
+        cupiditate neque quas!
+      </p></ng-template
+    >
+    <ng-template pTemplate="footer">
+      <p-button
+        label="Scopri di più"
+        icon="pi pi-info-circle"
+        class="p-button-outlined"
+        severity="info"
+        [routerLink]="'/libreriaverde'"
+      ></p-button>
+    </ng-template>
+  </p-card>
 </div>

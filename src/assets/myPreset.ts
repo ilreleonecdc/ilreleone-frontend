@@ -54,7 +54,7 @@ export const MyBrandPreset = definePreset(Aura, {
     },
     colorScheme: {
       light: {
-        surface: '#FFFFFF',
+        surface: '#ffffff',
         surfaceBorder: '#e4e4e4',
         textColor: '#000000',
         primary: {

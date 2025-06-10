@@ -1,5 +1,5 @@
 
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from "primeng/card";
@@ -13,14 +13,23 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
   styleUrl: './home.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   viewportWidth = window.innerWidth;
   showDebug = true; // puoi metterlo a false per disattivare
+
+  cards: any;
 
   constructor() {
     window.addEventListener('resize', () => {
       this.viewportWidth = window.innerWidth;
     });
+  }
+
+  ngOnInit(): void {
+    this.cards = [
+        { headerImg: "../../../assets/oratorioSVG.svg", title: "Oratorio PerDiQua", subtitle: "Parrocchia di Cerbara", content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!", routerlink: "/oratoriorperdiqua", class: "oratorio"},
+        { headerImg: "../../../assets/logoLeoneSVG.svg", title: "Il Re Leone CDC", subtitle: "Il Musical", content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!", routerlink: "/ilreleonecdc", class: "leone"}
+      ]
   }
 
   @HostListener('window:scroll', [])
