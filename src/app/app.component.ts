@@ -3,7 +3,8 @@ import { RouterOutlet } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { FooterComponent } from "./components/footer/footer.component";
-import * as AOS from 'aos';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { BrowserModule, HAMMER_GESTURE_CONFIG, HammerModule } from '@angular/platform-browser';
 import { MyHammerConfig } from './pages/compagnia/cast/cast.component';
 import { ViewportComponent } from "./components/viewport/viewport.component";
@@ -19,6 +20,6 @@ export class AppComponent implements OnInit {
   title = 'ilreleone-frontend';
 
   ngOnInit(): void {
-    AOS.init();
+    AOS.init({once: true, duration: 700});
   }
 }

@@ -20,6 +20,7 @@
     class="flip-card-wrapper"
     [class.flipped]="card.isFlipped"
     [class.hint]="$index === 1 && showHint"
+    data-aos="fade-up"
   >
     <div class="flip-card-inner" [tabIndex]="$index">
       <div class="face-front">
