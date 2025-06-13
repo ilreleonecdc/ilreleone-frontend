@@ -3,7 +3,8 @@ import { Component, Injectable, OnInit} from '@angular/core';
 import { ButtonModule} from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { SkeletonModule } from 'primeng/skeleton'
-import { HammerGestureConfig, HAMMER_GESTURE_CONFIG, BrowserModule, HammerModule } from '@angular/platform-browser';
+import { CarouselModule } from 'primeng/carousel'
+import { HammerGestureConfig, HAMMER_GESTURE_CONFIG, HammerModule } from '@angular/platform-browser';
 import * as Hammer from 'hammerjs';
 
 @Injectable()
@@ -20,10 +21,10 @@ export class MyHammerConfig extends HammerGestureConfig {
 
 @Component({
   selector: 'app-cast',
-  imports: [HammerModule, CommonModule, CardModule, ButtonModule, SkeletonModule],
+  imports: [HammerModule, CarouselModule, CommonModule, CardModule, ButtonModule, SkeletonModule],
   templateUrl: './cast.component.html',
   styleUrl: './cast.component.scss',
-  providers: [{provide: HAMMER_GESTURE_CONFIG, useClass: MyHammerConfig}]
+  providers: [{ provide: HAMMER_GESTURE_CONFIG, useClass: MyHammerConfig }],
 })
 export class CastComponent implements OnInit {
   public cast: any;
@@ -63,5 +64,6 @@ export class CastComponent implements OnInit {
     setTimeout(() => {
       this.showHint = true;
     }, 4000)
+
   }
 }

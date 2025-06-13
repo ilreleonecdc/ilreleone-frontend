@@ -16,10 +16,6 @@
   }
 }
 
-:host ::ng-deep .p-card {
-  z-index: 99999;
-}
-
 :host ::ng-deep .p-card-header {
   padding: 0;
 }
@@ -145,9 +141,8 @@
       flex-direction: column;
       background: #fff;
 
-      transform-style: preserve-3d;
-
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      // 0 4px 8px rgba(0, 0, 0, 0.1),
+      // 0 8px 16px rgba(0, 0, 0, 0.12);
       transition: all 0.3s ease;
 
       &:hover {
