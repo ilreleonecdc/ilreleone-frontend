@@ -1,5 +1,5 @@
 import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection, isDevMode } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withViewTransitions, withInMemoryScrolling } from '@angular/router';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { providePrimeNG } from 'primeng/config';
 
@@ -15,7 +15,7 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideHttpClient(),
-    provideRouter(routes),
+    provideRouter(routes, withInMemoryScrolling({scrollPositionRestoration: 'enabled'})),
     provideAnimationsAsync(),
     { provide: HAMMER_GESTURE_CONFIG, useClass: MyHammerConfig },
     importProvidersFrom(HammerModule),
@@ -30,7 +30,8 @@ export const appConfig: ApplicationConfig = {
         }
       }
     }),
-    MessageService, provideServiceWorker('ngsw-worker.js', {
+    MessageService,
+    provideServiceWorker('ngsw-worker.js', {
             enabled: !isDevMode(),
             registrationStrategy: 'registerWhenStable:30000'
           }), provideServiceWorker('ngsw-worker.js', {

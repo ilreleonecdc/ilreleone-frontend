@@ -4,10 +4,11 @@ import { RouterLink } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from "primeng/card";
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { HeroComponent } from '../../components/hero/hero.component';
 
 @Component({
   selector: 'app-home',
-  imports: [ButtonModule, CardModule, RouterLink],
+  imports: [ButtonModule, CardModule, RouterLink, HeroComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

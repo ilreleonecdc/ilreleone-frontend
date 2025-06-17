@@ -18,8 +18,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  backdrop-filter: blur(10px);
   transition: all 0.4s ease;
+  backdrop-filter: blur(50px);
 
   h3 {
     font-size: 1.5rem;
@@ -28,7 +28,7 @@
 
   &.scrolled {
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 1);
     padding: 0.5rem;
     .spacer {
       img {
