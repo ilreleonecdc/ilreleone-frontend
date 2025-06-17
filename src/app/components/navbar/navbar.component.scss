@@ -90,6 +90,39 @@
 }
 
 // region animazioni
+@keyframes slideInUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInDown {
+  0% {
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutDown {
+  0% {
+    transform: translateY(100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
 @keyframes slideInLeft {
   0% {
     transform: translateX(-100%);
@@ -155,11 +188,11 @@
 :host ::ng-deep .p-menubar-mobile .p-menubar-root-list {
   justify-self: center;
   background-color: rgba(255, 255, 255);
-  gap: 0;
+  gap: 0.5rem;
   span {
     color: #1f2937;
-    font-weight: 700;
-    font-size: 1rem;
+    font-weight: 600;
+    font-size: 1.5rem;
     margin-left: 0.5rem;
   }
   .p-icon {
@@ -198,7 +231,62 @@
 }
 
 :host ::ng-deep .p-menubar-submenu {
+  animation: slideInDown 0.3s ease forwards;
   min-width: 8rem;
+  .p-menubar-item-label {
+    font-weight: 500 !important;
+    font-size: 1.2rem !important;
+  }
+}
+
+@media (max-width: 767px) {
+  :host ::ng-deep .p-menubar-mobile-active .p-menubar-root-list {
+    /* Fissa il pannello in basso e a tutta larghezza */
+    position: fixed !important;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* regola in base al design */
+
+    /* Sfondo e arrotondamento superiore */
+    background: #fff;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem; /* arrotonda gli angoli in alto */
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+
+    /* Layout interno verticale */
+    display: flex !important;
+    flex-direction: column;
+    padding-top: 1.5rem; /* spazio per l’handle */
+    overflow-y: auto; /* scroll se molti item */
+
+    /* Animazione di comparsa */
+    animation: slideInUp 0.3s ease-out both;
+  }
+
+  /* Handle di swipe in cima */
+  :host ::ng-deep .p-menubar-mobile-active .p-menubar-root-list::before {
+    content: "";
+    position: absolute;
+    top: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: #ccc;
+    border-radius: 2px; /* arrotonda il handle */
+  }
+
+  /* Ombra che segue il profilo del pannello */
+  :host ::ng-deep .p-menubar-mobile-active .p-menubar-root-list {
+    filter: drop-shadow(0 -4px 50px rgba(0, 0, 0, 0.1));
+  }
+
+  :host ::ng-deep .menu-anim-out {
+    .p-menubar-root-list {
+      animation: slideOutDown 0.3s ease forwards;
+    }
+  }
 }
 
 // region TABLET

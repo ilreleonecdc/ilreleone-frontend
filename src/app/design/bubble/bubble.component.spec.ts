@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CoomingSoonComponent } from './cooming-soon.component';
+import { BubbleComponent } from './bubble.component';
 
-describe('CoomingSoonComponent', () => {
-  let component: CoomingSoonComponent;
-  let fixture: ComponentFixture<CoomingSoonComponent>;
+describe('BubbleComponent', () => {
+  let component: BubbleComponent;
+  let fixture: ComponentFixture<BubbleComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CoomingSoonComponent]
+      imports: [BubbleComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CoomingSoonComponent);
+    fixture = TestBed.createComponent(BubbleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

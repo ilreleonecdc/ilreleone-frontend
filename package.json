@@ -27,6 +27,8 @@
     "@types/three": "^0.176.0",
     "animate.css": "^4.1.1",
     "aos": "^2.3.4",
+    "blob": "^0.1.0",
+    "blobs": "^2.3.0-beta.2",
     "hammerjs": "^2.0.8",
     "ilreleone-frontend": "file:",
     "ngx-toastr": "^19.0.0",
