@@ -1,4 +1,7 @@
-<app-navbar></app-navbar>
+<app-navbar #navbar></app-navbar> @if (navbar.isMenuOpen) {
+<div class="menu-overlay" (click)="navbar.toggleMenu()"></div>
+}
+
 <router-outlet></router-outlet>
 <app-viewport></app-viewport>
 <app-footer></app-footer>

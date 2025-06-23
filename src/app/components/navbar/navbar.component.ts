@@ -63,6 +63,7 @@ export class NavbarComponent implements OnInit {
   toggleMenu() {
     if (this.isMenuOpen) {
       this.closeMenu();
+      document.body.classList.toggle('no-scroll', this.isMenuOpen);
     } else {
       this.isMenuOpen = true;
     }

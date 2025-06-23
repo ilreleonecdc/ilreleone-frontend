@@ -95,6 +95,19 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+}
+
+html,
+body {
+  overscroll-behavior: none;
+  overscroll-behavior-block: contain;
+}
+
 /* ✅ Font e tipografia base */
 body {
   font-family: "Rubik", sans-serif;
