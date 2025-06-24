@@ -5,6 +5,7 @@ import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { MenubarModule } from 'primeng/menubar';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-navbar',
@@ -27,12 +28,21 @@ export class NavbarComponent implements OnInit {
   isMenuOpen: boolean = false;
   isAnimatingOut: boolean = false;
 
+  isHome = false;
+
   constructor(private router: Router) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.isMenuOpen = false;
+        document.body.classList.remove('no-scroll');
       }
     });
+
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe((event: NavigationEnd) => {
+        this.isHome = event.urlAfterRedirects === '/' || event.urlAfterRedirects === '/home';
+      });
   }
 
   ngOnInit(): void {
@@ -63,9 +73,10 @@ export class NavbarComponent implements OnInit {
   toggleMenu() {
     if (this.isMenuOpen) {
       this.closeMenu();
-      document.body.classList.toggle('no-scroll', this.isMenuOpen);
+      document.body.classList.remove('no-scroll');
     } else {
       this.isMenuOpen = true;
+      document.body.classList.add('no-scroll');
     }
   }
 
