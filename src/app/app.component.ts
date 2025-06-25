@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
+import { AnimateOnScrollModule } from 'primeng/animateonscroll';
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import AOS from 'aos';
@@ -12,7 +13,7 @@ import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
-  imports: [HammerModule, RouterOutlet, ButtonModule, NavbarComponent, FooterComponent, ViewportComponent],
+  imports: [HammerModule, RouterOutlet, ButtonModule, NavbarComponent, FooterComponent, AnimateOnScrollModule,ViewportComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   providers: [{ provide: HAMMER_GESTURE_CONFIG, useClass: MyHammerConfig }],
